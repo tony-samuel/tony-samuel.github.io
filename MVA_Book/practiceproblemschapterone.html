@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Practice problems - Chapter 1 | Multivariable and vector calculus</title>
+  <meta name="description" content="Practice problems - Chapter 1 | Multivariable and vector calculus" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Practice problems - Chapter 1 | Multivariable and vector calculus" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Practice problems - Chapter 1 | Multivariable and vector calculus" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="taylorandfourierseriesfoundations.html"/>
+<link rel="next" href="functions-of-several-variables.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/thmhighlight.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariable and vector calculus</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Foundations (Prerequisites)</a>
+<ul>
+<li><a href="symbolsandsets.html#symbolsandsets" id="toc-symbolsandsets"><span class="toc-section-number">1.1</span> Mathematical symbols and sets</a></li>
+<li><a href="vcs.html#vcs" id="toc-vcs"><span class="toc-section-number">1.2</span> Vectors and coordinate systems</a></li>
+<li><a href="functionsfoundations.html#functionsfoundations" id="toc-functionsfoundations"><span class="toc-section-number">1.3</span> Functions</a></li>
+<li><a href="differentiationfoundations.html#differentiationfoundations" id="toc-differentiationfoundations"><span class="toc-section-number">1.4</span> Differentiation</a></li>
+<li><a href="critical_points_foundations.html#critical_points_foundations" id="toc-critical_points_foundations"><span class="toc-section-number">1.5</span> Critical points</a></li>
+<li><a href="integrationfoundations.html#integrationfoundations" id="toc-integrationfoundations"><span class="toc-section-number">1.6</span> Integration</a></li>
+<li><a href="parametriccurvesfoundations.html#parametriccurvesfoundations" id="toc-parametriccurvesfoundations"><span class="toc-section-number">1.7</span> Parametric curves</a></li>
+<li><a href="sequencesseriesfoundations.html#sequencesseriesfoundations" id="toc-sequencesseriesfoundations"><span class="toc-section-number">1.8</span> Sequences and series</a></li>
+<li><a href="taylorandfourierseriesfoundations.html#taylorandfourierseriesfoundations" id="toc-taylorandfourierseriesfoundations"><span class="toc-section-number">1.9</span> Taylor and Fourier series</a></li>
+<li><a href="practiceproblemschapterone.html#practiceproblemschapterone" id="toc-practiceproblemschapterone">Practice problems - Chapter 1</a></li>
+</ul></li>
+<li><a href="functions-of-several-variables.html#functions-of-several-variables" id="toc-functions-of-several-variables"><span class="toc-section-number">2</span> Functions of several variables</a>
+<ul>
+<li><a href="limitsparttwoFSV.html#limitsparttwoFSV" id="toc-limitsparttwoFSV"><span class="toc-section-number">2.1</span> Limits (part II)</a></li>
+<li><a href="continuityparttwoFSV.html#continuityparttwoFSV" id="toc-continuityparttwoFSV"><span class="toc-section-number">2.2</span> Continuity (part II)</a></li>
+<li><a href="practiceproblemschaptertwo.html#practiceproblemschaptertwo" id="toc-practiceproblemschaptertwo">Practice problems – Chapter 2</a></li>
+</ul></li>
+<li><a href="partialderivatives.html#partialderivatives" id="toc-partialderivatives"><span class="toc-section-number">3</span> Partial derivatives</a>
+<ul>
+<li><a href="pd.html#pd" id="toc-pd"><span class="toc-section-number">3.1</span> Partial derivatives</a></li>
+<li><a href="thechainrule.html#thechainrule" id="toc-thechainrule"><span class="toc-section-number">3.2</span> The chain rule</a></li>
+<li><a href="implicitdifferentiation.html#implicitdifferentiation" id="toc-implicitdifferentiation"><span class="toc-section-number">3.3</span> Implicit differentiation</a></li>
+<li><a href="pde.html#pde" id="toc-pde"><span class="toc-section-number">3.4</span> Partial differential equations</a></li>
+<li><a href="directionalderivative.html#directionalderivative" id="toc-directionalderivative"><span class="toc-section-number">3.5</span> Directional derivative</a></li>
+<li><a href="practiceproblemschapterthree.html#practiceproblemschapterthree" id="toc-practiceproblemschapterthree">Practice problems – Chapter 3</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multivariable and vector calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="practiceproblemschapterone" class="section level2 unnumbered">
+<h2>Practice problems - Chapter 1</h2>
+<div class="exercise" echo="TRUE">
+<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercise 1.1  </strong></span>Find and classify the stationary points of the following functions.</p>
+<ol style="list-style-type: lower-alpha">
+<li><div>
+The function <span class="math inline">\(f \, \colon \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x) = x^{3} - 3x^{2} + 2x\)</span>
+</div></li>
+<li><div>
+The function <span class="math inline">\(g \colon \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(g(x) = 5x^{3} - 3x^{5}\)</span></li>
+<li><div>
+The function <span class="math inline">\(h \colon \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(h(x) = (x^2 + x - 1)/(x^{2} + 1)\)</span>
+</div></li>
+</ol>
+</div>
+<details>
+<summary>
+Show/hide solution
+</summary>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<p><span id="unlabeled-div-27" class="solution"><em>Solution</em> (part a). </span>If <span class="math inline">\(x\)</span> is a stationary point of <span class="nbr"><span class="math inline">\(f\)</span>,</span> then <span class="nbr"><span class="math inline">\(f&#39;(x) = 0\)</span>,</span> which in this case is when <span class="nbr"><span class="math inline">\(3x^{2} - 6x + 2 = 0\)</span>.</span> Solutions to this equation are <span class="math inline">\(x = 1 - 1/\sqrt{3}\)</span> and <span class="nbr"><span class="math inline">\(x = 1 + 1/\sqrt{3}\)</span>.</span> By the second derivative test, since <span class="math inline">\(f&#39;&#39;(x) = 6x - 6\)</span> is negative at <span class="nbr"><span class="math inline">\(x = 1 - 1/\sqrt{3}\)</span>,</span> we have a local maximum at <span class="nbr"><span class="math inline">\(x = 1 - 1/\sqrt{3}\)</span>,</span> and since <span class="math inline">\(f&#39;&#39;(x)\)</span> is positive at <span class="nbr"><span class="math inline">\(x=1+1/\sqrt3\)</span>,</span> we have a local minimum at <span class="math inline">\(x=1+1/\sqrt3\)</span>.</p>
+<div>
+Since <span class="math inline">\(f\)</span> is a polynomial, it is continuous, and since
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+\lim_{x \to \infty} f(x) = \infty \quad \text{and} \quad \lim_{x \to -\infty} f(x) = -\infty,
+\end{align*}\]</span>
+</div>
+<div>
+we have that neither <span class="math inline">\(x = 1 - 1/\sqrt{3}\)</span> nor <span class="math inline">\(x = 1 + 1/\sqrt{3}\)</span> are global extrema.
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<p><span id="unlabeled-div-28" class="solution"><em>Solution</em> (part b). </span>If <span class="math inline">\(x\)</span> is a stationary point, then <span class="nbr"><span class="math inline">\(g&#39;(x) = 0\)</span>,</span> which in this case is when <span class="nbr"><span class="math inline">\(15x^{2} - 15x^{4} = 0\)</span>,</span> or equivalently, if <span class="nbr"><span class="math inline">\(x^{2}(1 - x^{2}) = 0\)</span>.</span> Solutions to this equation are <span class="nbr"><span class="math inline">\(x= -1\)</span>,</span> <span class="math inline">\(x = 0\)</span> and <span class="nbr"><span class="math inline">\(x = 1\)</span>.</span> By the second derivative test, since <span class="nbr"><span class="math inline">\(g&#39;&#39;(x) = 30x - 60x^{3}\)</span>,</span> at <span class="nbr"><span class="math inline">\(x = -1\)</span>,</span> we have <span class="nbr"><span class="math inline">\(g&#39;&#39;(x) = 30 &gt; 0\)</span>,</span> and so <span class="math inline">\(x = -1\)</span> is a local minimum; at <span class="nbr"><span class="math inline">\(x=1\)</span>,</span> we have <span class="nbr"><span class="math inline">\(g&#39;&#39;(x) = -30 &lt; 0\)</span>,</span> and so <span class="math inline">\(x = 1\)</span> is a local maximum; at <span class="math inline">\(x=0\)</span> we have <span class="nbr"><span class="math inline">\(g&#39;&#39;(x) = 0\)</span>,</span> and so the second derivative test is inconclusive.</p>
+<div>
+Let us examine this latter case more closely. Observe that
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+\lim_{\epsilon \to 0} \frac{g(\epsilon)}{5\epsilon^{3}} = \lim_{\epsilon \to 0} \frac{5\epsilon^{3} - 3\epsilon^{5}}{5\epsilon^{3}} = 1.
+\end{align*}\]</span>
+</div>
+<div>
+<p>Therefore, if <span class="math inline">\(\epsilon\)</span> is arbitrarily small and positive, then <span class="math inline">\(g(\epsilon) &gt; 0\)</span> since <span class="nbr"><span class="math inline">\(5\epsilon^{3} &gt; 0\)</span>,</span> and so <span class="nbr"><span class="math inline">\(g(\epsilon) &gt; 0 = g(0)\)</span>.</span> Similarly, if <span class="math inline">\(\epsilon\)</span> is arbitrarily small and negative, then <span class="math inline">\(g(\epsilon) &lt; 0\)</span> since <span class="nbr"><span class="math inline">\(5\epsilon^{3} &lt; 0\)</span>,</span> and so <span class="nbr"><span class="math inline">\(g(\epsilon) &lt; 0 = g(0)\)</span>.</span> This implies that <span class="math inline">\(x=0\)</span> is a saddle point.</p>
+</div>
+<div>
+Since, <span class="math inline">\(g\)</span> is a polynomial, it is continuous, and since
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+\lim_{x \to \infty} g(x) = -\infty \quad \text{and} \quad \lim_{x \to -\infty} g(x) = \infty,
+\end{align*}\]</span>
+</div>
+<div>
+neither <span class="nbr"><span class="math inline">\(x = -1\)</span>,</span> <span class="math inline">\(x = 0\)</span> nor <span class="math inline">\(x = 1\)</span> are global extrema.
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-29" class="solution"><em>Solution</em> (part c). </span>If <span class="math inline">\(x\)</span> is a stationary points, then <span class="nbr"><span class="math inline">\(h&#39;(x) = 0\)</span>.</span> By the quotient rule,
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+h&#39;(x) = \frac{(2x+1)(x^{2}+1) - (x^{2} + x - 1)(2x)}{(x^{2} + 1)^{2}}=\frac{-x^{2} + 4x + 1}{(x^{2} + 1)^{2}}
+\end{align*}\]</span>
+</div>
+<div>
+Thus, <span class="math inline">\(x\)</span> is a stationary point if <span class="nbr"><span class="math inline">\(-x^{2} + 4x + 1 = 0\)</span>.</span> Solutions to this equation are <span class="math inline">\(x = 2 - \sqrt{5}\)</span> and <span class="nbr"><span class="math inline">\(x = 2 + \sqrt{5}\)</span>.</span> Observing that the graph of <span class="math inline">\(y = -x^{2} + 4x + 1\)</span> is a parabola, a quick sketch shows that <span class="math inline">\(x = 2 - \sqrt{5}\)</span> is a local minimum and <span class="math inline">\(x = 2 + \sqrt{5}\)</span> is a local maximum, see Figures <a href="practiceproblemschapterone.html#fig:fig-q-1-1">1.3</a>. Note you could use the second derivative test here but <span class="math inline">\(h&#39;&#39;\)</span> is not easy to work with.
+</div>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-q-1-1"></span>
+<img src="Images/Chapter_12_1/q_1_1-1.png" alt="Sketch of the graph of $y = -x^{2}+4*x+1$." width="831" />
+<p class="caption">
+FIGURE 1.3: Sketch of the graph of <span class="math inline">\(y = -x^{2}+4*x+1\)</span>.
+</p>
+</div>
+<details>
+<summary>
+Show/hide image source code
+</summary>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb3-1"><a href="practiceproblemschapterone.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">%%Image generated using \LaTeX package *tikz*.%%</span></span>
+<span id="cb3-2"><a href="practiceproblemschapterone.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb3-3"><a href="practiceproblemschapterone.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb3-4"><a href="practiceproblemschapterone.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb3-5"><a href="practiceproblemschapterone.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb3-6"><a href="practiceproblemschapterone.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb3-7"><a href="practiceproblemschapterone.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb3-8"><a href="practiceproblemschapterone.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb3-9"><a href="practiceproblemschapterone.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb3-10"><a href="practiceproblemschapterone.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb3-11"><a href="practiceproblemschapterone.html#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\pgfplotsset</span>{every axis/.append style={</span>
+<span id="cb3-12"><a href="practiceproblemschapterone.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  axis x line=middle,</span>
+<span id="cb3-13"><a href="practiceproblemschapterone.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">% put the x a  xis in the middle</span></span>
+<span id="cb3-14"><a href="practiceproblemschapterone.html#cb3-14" aria-hidden="true" tabindex="-1"></a>  axis y line=middle,</span>
+<span id="cb3-15"><a href="practiceproblemschapterone.html#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">% put the y axis in the middle</span></span>
+<span id="cb3-16"><a href="practiceproblemschapterone.html#cb3-16" aria-hidden="true" tabindex="-1"></a>  axis line style={thick,-&gt;,color=black},</span>
+<span id="cb3-17"><a href="practiceproblemschapterone.html#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">% arrows on the axis</span></span>
+<span id="cb3-18"><a href="practiceproblemschapterone.html#cb3-18" aria-hidden="true" tabindex="-1"></a>  xlabel={<span class="ss">$x$</span>},</span>
+<span id="cb3-19"><a href="practiceproblemschapterone.html#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">% default put x on x-axis</span></span>
+<span id="cb3-20"><a href="practiceproblemschapterone.html#cb3-20" aria-hidden="true" tabindex="-1"></a>  ylabel={<span class="ss">$y$</span>},</span>
+<span id="cb3-21"><a href="practiceproblemschapterone.html#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">% default put y on y-axis</span></span>
+<span id="cb3-22"><a href="practiceproblemschapterone.html#cb3-22" aria-hidden="true" tabindex="-1"></a>  xtick = {-2,2,4},</span>
+<span id="cb3-23"><a href="practiceproblemschapterone.html#cb3-23" aria-hidden="true" tabindex="-1"></a>  ytick = {-6,-3,3,6}</span>
+<span id="cb3-24"><a href="practiceproblemschapterone.html#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">%add tickmarks</span></span>
+<span id="cb3-25"><a href="practiceproblemschapterone.html#cb3-25" aria-hidden="true" tabindex="-1"></a>}}</span>
+<span id="cb3-26"><a href="practiceproblemschapterone.html#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb3-27"><a href="practiceproblemschapterone.html#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb3-28"><a href="practiceproblemschapterone.html#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb3-29"><a href="practiceproblemschapterone.html#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb3-30"><a href="practiceproblemschapterone.html#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb3-31"><a href="practiceproblemschapterone.html#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb3-32"><a href="practiceproblemschapterone.html#cb3-32" aria-hidden="true" tabindex="-1"></a>    xmin=-2.25,xmax=6,</span>
+<span id="cb3-33"><a href="practiceproblemschapterone.html#cb3-33" aria-hidden="true" tabindex="-1"></a>    ymin=-8,ymax=8,</span>
+<span id="cb3-34"><a href="practiceproblemschapterone.html#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">% grid=both,</span></span>
+<span id="cb3-35"><a href="practiceproblemschapterone.html#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">% adds gridlines</span></span>
+<span id="cb3-36"><a href="practiceproblemschapterone.html#cb3-36" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb3-37"><a href="practiceproblemschapterone.html#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\addplot</span> [thick, domain=-1.5:5.5, samples=500, color=Cerulean, variable=<span class="fu">\t</span>]</span>
+<span id="cb3-38"><a href="practiceproblemschapterone.html#cb3-38" aria-hidden="true" tabindex="-1"></a>    ({t}, {-t*t + 4*t + 1});</span>
+<span id="cb3-39"><a href="practiceproblemschapterone.html#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb3-40"><a href="practiceproblemschapterone.html#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> at (4.75, 0.5) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}y = -x^2+4x+1}$</span>};</span>
+<span id="cb3-41"><a href="practiceproblemschapterone.html#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb3-42"><a href="practiceproblemschapterone.html#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb3-43"><a href="practiceproblemschapterone.html#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+</details>
+</div>
+</details>
+<div class="exercise" echo="TRUE">
+<p><span id="exr:unlabeled-div-30" class="exercise"><strong>Exercise 1.2  </strong></span>Determine the order four Taylor polynomials centered at zero and generated the following functions.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The function <span class="math inline">\(f \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x) =\sin(2x)\)</span></li>
+<li>The function <span class="math inline">\(g \, \colon \, (-1/2, 1/2) \to \mathbb{R}\)</span> given by <span class="math inline">\(g(x)= 1/(1+2x)\)</span></li>
+<li>The function <span class="math inline">\(h \, \colon \, (-2, 2) \to \mathbb{R}\)</span> given by <span class="math inline">\(h(x) = 1/(2+x)\)</span></li>
+<li>The function <span class="math inline">\(k \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(k(x)=\mathrm{e}^{2x}\cos(x)\)</span></li>
+<li>The function <span class="math inline">\(q \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(q(x)= 2/(2-\sin(x))\)</span></li>
+</ol>
+</div>
+<p><br /></p>
+<!--
+<details>
+<summary>Show/hide solution</summary>
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-97-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part a). </span>  \fi{}The Taylor series generated by the function $x \mapsto \sin(x)$ centered at zero is
+<div class="aligncontainer">\begin{align*}
+x-\frac{x^3}{3!}+\frac{x^5}{5!}+\dots+ (-1)^n\frac{x^{2n+1}}{(2n+1)!} +\dots
+\end{align*}</div>
+<div>Noting that the Taylor series generated by the function $x \mapsto \sin(x)$ centered at zero converges to <span class="nbr">$x \mapsto \sin(x)$,</span> substituting $x$ with <span class="nbr">$2x$,</span> by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $f$ is</div>
+<div class="aligncontainer">\begin{align*}
+(2x)-\frac{(2x)^3}{3!}+\frac{(2x)^5}{5!}-\frac{(2x)^7}{7!}+\dots+ (-1)^n\frac{(2x)^{2n+1}}{(2n+1)!}+\dots
+=2x-\frac{8x^{3}}{6}+\frac{32x^{5}}{120}-\frac{128x^{7}}{5040}+\dots
+\end{align*}</div>
+<div>Hence, the order four Taylor polynomial centered at zero and generated by $f$ is</div>
+<div class="aligncontainer">\begin{align*}
+P_{4}(x) = 2x-\frac{4}{3} x^3.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-98-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part b). </span>  \fi{}By the geometric series identity, the Taylor series centered at zero and generated by the function $x \mapsto 1/(1-x)$ with domain <span class="nbr">$(-1, 1)$,</span> is 
+<div class="aligncontainer">\begin{align*}
+1+x+x^2+\dots+x^{n}+\dots
+\end{align*}</div>
+Noting that <span class="nbr">$1 + 2x = 1 - (-2x)$,</span> that if <span class="nbr">$x \in (-1/2, 1/2)$,</span> then <span class="nbr">$-2x \in (-1, 1)$,</span> and that the Taylor series generated by $x \mapsto 1/(1-x)$ centered at zero converges to <span class="nbr">$x \mapsto 1/(1-x)$,</span> by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $g$ is 
+<div class="aligncontainer">\begin{align*}
+1+(-2x)+(-2x)^{2} + \dots + (-2x)^{n} + \dots
+\end{align*}</div>
+Hence, the order four Taylor polynomial centered at zero and generated by $g$ is $P_{4}(x) = 1 - 2x + 4x^{2} - 8x^{3}+16x^{4}$.</div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-99-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part c). </span>  \fi{}By the geometric series identity, the Taylor series centered at zero and generated by the function $x \mapsto 1/(1-x)$ with domain <span class="nbr">$(-1, 1)$,</span> is 
+<div class="aligncontainer">\begin{align*}
+1+x+x^2+\dots+x^{n}+\dots
+\end{align*}</div>
+Noting that <span class="nbr">$2 + x = 2(1-(-x/2))$,</span> that if <span class="nbr">$x \in (-2, 2)$,</span> then <span class="nbr">$-x/2 \in (-1, 1)$,</span> and that the Taylor series generated by $x \mapsto 1/(1-x)$ centered at zero converges to <span class="nbr">$x \mapsto 1/(1-x)$,</span> by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $h$ is
+<div class="aligncontainer">\begin{align*}
+\frac{1}{2} \left( 1 + \frac{-x}{2} + \frac{(-x)^{2}}{2^{2}} + \dots + \frac{(-x)^{n}}{2^{n}} + \dots \right) = \frac{1}{2} + \frac{-x}{2^{2}} + \frac{(-x)^{2}}{2^{3}} + \dots + \frac{(-x)^{n}}{2^{n+1}} + \dots
+\end{align*}</div>
+<div>Hence, the order four Taylor polynomial centered at zero and generated by $h$ is</div>
+<div class="aligncontainer">\begin{align*}
+P_{4}(x) = \frac{1}{2} - \frac{x}{4} + \frac{x^{2}}{8} - \frac{x^{3}}{16} + \frac{x^{4}}{32}.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-100-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part d). </span>  \fi{}The Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero is
+<div class="aligncontainer">\begin{align*}
+1 + x + \frac{x^2}{2!} + \dots + \frac{x^n}{n!} + \dots
+\end{align*}</div>
+<div>Noting that the Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero converges to <span class="nbr">$x \mapsto \mathrm{e}^{x}$,</span> substituting $x$ with <span class="nbr">$2x$,</span> by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $x \mapsto \mathrm{e}^{2x}$ is</div>
+<div class="aligncontainer">\begin{align*}
+1 + 2x + 2x^{2} + \frac{4x^3}{3} + \frac{2 x^{4}}{3} + \dots
+\end{align*}</div>
+<div>Further, the Taylor series generated by the function $x \mapsto \cos(x)$ centered at zero is</div>
+<div class="aligncontainer">\begin{align*}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}+\dots+(-1)^n\frac{x^{2n}}{(2n)!}+ \dots
+\end{align*}</div>
+<div>and converges to <span class="nbr">$x \mapsto \cos(x)$.</span>  Therefore, by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $k$ is</div>
+<div class="aligncontainer">\begin{align*}
+\left(1+2x+2x^{2}+\frac{4x^{3}}{3} + \frac{2x^{4}}{3}+\dots\right)\left(1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}+\dots\right).
+\end{align*}</div>
+<div>Expanding this expression and ignoring all terms involving powers of $x$ greater than $4$ we obtain that the order four Taylor polynomial centered at zero and generated by $h$ is</div>
+<div class="aligncontainer">\begin{align*}
+P_{4}(x) = 1+2x+\frac{3x^{2}}{2} - \frac{x^{3}}{3} - \frac{7x^{4}}{24}.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-101-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part e). </span>  \fi{}The Taylor series generated by the function $x \mapsto \sin(x)$ centered at zero is
+<div class="aligncontainer">\begin{align*}
+x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} + \dots + \frac{(-1)^{n}x^{2n+1}}{(2n+1)!} + \dots
+\end{align*}</div>
+<div>By the geometric series identity, the Taylor series centered at zero and generated by the function $x \mapsto 1/(1-x)$ with domain <span class="nbr">$(-1, 1)$,</span> is $1+x+x^2+\dots+x^{n}+\dots\;$ Noting that <span class="nbr">$2 -\sin(x) = 2(1 - \sin(x)/2)$,</span> that $\sin(x)/2 \in (-1, 1)$ and that the Taylor series generated by $x \mapsto \sin(x)$ centered at zero converges to <span class="nbr">$x \mapsto \sin(x)$,</span> by the uniqueness property of Taylor series, the Taylor series centered at zero and generated by $q$ is</div>
+<div class="aligncontainer">\begin{align*}
+\frac{2}{2(1-\frac{1}{2}(x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots))} = 1+\frac{1}{2}\left(x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots\right)+\frac{1}{2^{2}}\left(x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots\right)^{2}+\cdots
+\end{align*}</div>
+<div>Expanding this expression and ignoring all terms involving powers of $x$ greater than $4$ we obtain that the order four Taylor polynomial centered at zero and generated by $q$ is</div>
+<div class="aligncontainer">\begin{align*}
+P_{4}(x) = 1+\frac{x}{2}+\frac{x^{2}}{4}-\frac{x^{3}}{24} + \frac{x^{4}}{16}.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+</details>
+-->
+<div class="exercise" echo="TRUE">
+<p><span id="exr:unlabeled-div-31" class="exercise"><strong>Exercise 1.3  </strong></span>Write down Taylor series centered at zero and generated by the following functions.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The function <span class="math inline">\(f \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\mathrm{e}^x\)</span></li>
+<li>The function <span class="math inline">\(g \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(g(x)=\sin(x)\)</span></li>
+<li>The function <span class="math inline">\(h \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(h(x)=\cos(x)\)</span></li>
+<li>The function <span class="math inline">\(k \, \colon \, (-1, 1) \to \mathbb{R}\)</span> given by <span class="math inline">\(k(x)=1/(1-x)\)</span></li>
+<li>The function <span class="math inline">\(r \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(r(x)=x^2+x+1\)</span></li>
+</ol>
+</div>
+<details>
+<summary>
+Show/hide solution
+</summary>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-32" class="solution"><em>Solution</em> (part a). </span>If <span class="math inline">\(f \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> is given by <span class="nbr"><span class="math inline">\(f(x,y)=\mathrm{e}^{x}\)</span>,</span> then the Taylor series generate by <span class="math inline">\(f\)</span> centered at zero is
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+1+x+\frac{x^2}{2!}+\dots+\frac{x^n}{n!}+\dots =\sum_{n\geq0}\frac{x^{n}}{n!}.
+\end{align*}\]</span>
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-33" class="solution"><em>Solution</em> (part b). </span>If <span class="math inline">\(g \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> is given by <span class="nbr"><span class="math inline">\(g(x)=\sin(x)\)</span>,</span> then the Taylor series generate by <span class="math inline">\(f\)</span> centered at zero is
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+x-\frac{x^3}{3!}+\frac{x^5}{5!}+\dots+ (-1)^n\frac{x^{2n+1}}{(2n+1)!} +\dots =\sum_{n\geq0}\frac{(-1)^nx^{2n+1}}{(2n+1)!}
+\end{align*}\]</span>
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-34" class="solution"><em>Solution</em> (part c). </span>If <span class="math inline">\(h \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> is given by <span class="nbr"><span class="math inline">\(h(x)=\cos(x)\)</span>,</span> then the Taylor series generate by <span class="math inline">\(f\)</span> centered at zero is
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}+\dots+(-1)^n\frac{x^{2n}}{(2n)!}+\dots =\sum_{n\geq0}\frac{(-1)^nx^{2n}}{(2n)!}
+\end{align*}\]</span>
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-35" class="solution"><em>Solution</em> (part d). </span>If <span class="math inline">\(k \, \colon \, (-1, 1) \to \mathbb{R}\)</span> is given by <span class="nbr"><span class="math inline">\(k(x) = 1/(1-x)\)</span>,</span> then the Taylor series generate by <span class="math inline">\(k\)</span> centered at zero is
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+1+ x+x^2+\dots+x^n+\dots =\sum_{n\geq0} x^n
+\end{align*}\]</span>
+</div>
+</div>
+</div>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<p><span id="unlabeled-div-36" class="solution"><em>Solution</em> (part e). </span>If <span class="math inline">\(r \, \colon \, (-1, 1) \to \mathbb{R}\)</span> is given by <span class="nbr"><span class="math inline">\(r(x) = x^2+x+1\)</span>,</span> then the Taylor series generate by <span class="math inline">\(r\)</span> centered at zero is <span class="nbr"><span class="math inline">\(x^2+x+1\)</span>.</span></p>
+</div>
+</div>
+</details>
+<div class="exercise" echo="TRUE">
+<p><span id="exr:unlabeled-div-37" class="exercise"><strong>Exercise 1.4  </strong></span>Find the Taylor series generated by the following functions and centered at the given point <span class="math inline">\(c\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\mathrm{e}^x\)</span> and the point <span class="math inline">\(c=-1\)</span></li>
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\mathrm{e}^x\)</span> and the point <span class="math inline">\(c=-3\)</span></li>
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^2+x+1\)</span> and the point <span class="math inline">\(c=-1\)</span></li>
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=x^3 + 3x + 2\)</span> and the point <span class="math inline">\(c=3\)</span></li>
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\sin(x)\)</span> and the point <span class="math inline">\(c=\pi/2\)</span></li>
+<li>The function <span class="math inline">\(f\,\colon \, \mathbb{R} \to \mathbb{R}\)</span> given by <span class="math inline">\(f(x)=\sin(x)\)</span> and the point <span class="math inline">\(c=-\pi\)</span></li>
+</ol>
+</div>
+<p><br /></p>
+<!--
+<details>
+<summary>Show/hide solution</summary>
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-97-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part a). </span>  \fi{}The Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero is
+<div class="aligncontainer">\begin{align*}
+1 + x + \frac{x^2}{2!} + \dots + \frac{x^n}{n!} + \dots
+\end{align*}</div>
+<div>Noting that the Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero converges to <span class="nbr">$x \mapsto \mathrm{e}^{x}$,</span> and that</div>
+<div class="aligncontainer">\begin{align*}
+\mathrm{e}^{x} = \mathrm{e}^{(x-(-1))+(-1)} = \mathrm{e}^{(x+1)-1} = \mathrm{e}^{-1}\mathrm{e}^{(x+1)},
+\end{align*}</div>
+<div>substituting $x$ with $x-(-1) = x+1$ in the Taylor series generated by $x \mapsto \mathrm{e}^x$ centered at zero, by the uniqueness property of Taylor series, the Taylor series centered at $-1$ and generated by $\mathrm{e}^{x}$ is</div>
+<div class="aligncontainer">\begin{align*}
+\mathrm{e}^{-1} \left( 1+(x+1)+\frac{(x+1)^2}2+\dots+\frac{(x+1)^n}{n!}+\dots\right)
+=\mathrm{e}^{-1}+\mathrm{e}^{-1}(x+1)+\frac{\mathrm{e}^{-1}(x+1)^2}2+\dots+\frac{\mathrm{e}^{-1}(x+1)^n}{n!}+\dots.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-98-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part b). </span>  \fi{}The Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero is
+<div class="aligncontainer">\begin{align*}
+1 + x + \frac{x^2}{2!} + \dots + \frac{x^n}{n!} + \dots
+\end{align*}</div>
+<div>Noting that the Taylor series generated by the function $x \mapsto \mathrm{e}^{x}$ centered at zero converges to <span class="nbr">$x \mapsto \mathrm{e}^{x}$,</span> and that</div>
+<div class="aligncontainer">\begin{align*}
+\mathrm{e}^{x} = \mathrm{e}^{(x-(-3))+(-3)} = \mathrm{e}^{(x+3)-3} = \mathrm{e}^{-3}\mathrm{e}^{(x+3)},
+\end{align*}</div>
+<div>substituting $x$ with $x-(-3) = x+3$ in the Taylor series generated by $x \mapsto \mathrm{e}^x$ centered at zero, by the uniqueness property of Taylor series, the Taylor series centered at $-3$ and generated by $\mathrm{e}^{x}$ is</div>
+<div class="aligncontainer">\begin{align*}
+\mathrm{e}^{-3} \left( 1+(x+3)+\frac{(x+3)^2}2+\dots+\frac{(x+3)^n}{n!}+\dots\right)
+=\mathrm{e}^{-3}+\mathrm{e}^{-3}(x+3)+\frac{\mathrm{e}^{-3}(x+3)^2}2+\dots+\frac{\mathrm{e}^{-3}(x+3)^n}{n!}+\dots.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-99-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part c). </span>  \fi{}Since $f$ is a polynomial, the Taylor series generated by the $f$ centered at zero is itself, namely <span class="nbr">$x^2+x+1$,</span> and since
+<div class="aligncontainer">\begin{align*}
+f(x) = x^2+x+1
+&=((x-(-1))+(-1))^2+((x-(-1))+(-1))+1\\
+&=((x+1)-1)^2+((x+1)-1)+1\\
+&=((x+1)^2-2(x+1)+1)+((x+1)-1)+1\\
+&=1-(x+1)+(x+1)^2,
+\end{align*}</div>
+<div>by the uniqueness property of Taylor series, the Taylor series of $f$ centered at $-1$ is</div>
+<div class="aligncontainer">\begin{align*}
+1-(x+1)+(x+1)^2.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-100-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part d). </span>  \fi{}Since $f$ is a polynomial, the Taylor series generated by the $f$ centered at zero is itself, namely <span class="nbr">$x^3 + 3x + 2$,</span> and since
+<div class="aligncontainer">\begin{align*}
+f(x)&=x^3 + 3x + 2\\
+&=((x-3)+3)^3+3((x-3)+3)+2\\
+&=((x-3)^3+9(x-3)^2+27(x-3)+27)+(3(x-3)+9)+2\\
+&=38+ 30(x-3)+9(x-3)^2+(x-3)^3,
+\end{align*}</div>
+<div>by the uniqueness property of Taylor series, the Taylor series of $f$ centered at $3$ is</div>
+<div class="aligncontainer">\begin{align*}
+38+ 30(x-3)+9(x-3)^2+(x-3)^3.
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-101-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part e). </span>  \fi{}Recall that <span class="nbr">$\sin(x) = \cos(x-\pi/2)$,</span> for all <span class="nbr">$x \in \mathbb{R}$,</span> and that the Taylor series generated by the function $x \mapsto \cos(x)$ and centered at zero is
+<div class="aligncontainer">\begin{align*}
+1-\frac{x^2}2+\frac{x^4}{4!}+\cdots+(-1)^n\frac{x^{2n}}{(2n)!}+\cdots.
+\end{align*}</div>
+<div>Since the Taylor series generated by the function $x \mapsto \cos(x)$ and centered at zero converges to <span class="nbr">$x \mapsto \cos(x)$,</span> by the uniqueness property of Taylor series, substituting $x$ with $x-\pi/2$ in the Taylor series generated by $x \mapsto \cos(x)$ centered at zero, we obtain that the Taylor series of $f$ centered at $\pi/2$ is</div>
+<div class="aligncontainer">\begin{align*}
+1-\frac{(x-\pi/2)^2}2+\frac{(x-\pi/2)^4}{4!}+\cdots+(-1)^n\frac{(x-\pi/2)^{2n}}{(2n)!}+\cdots
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+
+<div class="soln">
+\BeginKnitrBlock{solution}\iffalse{-91-112-97-114-116-32-102-93-}\fi{}<div class="solution">\iffalse{} <span class="solution"><em>Solution</em> (part f). </span>  \fi{}Recall that <span class="nbr">$\sin(x) = -\sin(x+\pi)$,</span> for all <span class="nbr">$x \in \mathbb{R}$,</span> and that the Taylor series generated by the function $x \mapsto \sin(x)$ and centered at zero is
+<div class="aligncontainer">\begin{align*}
+x-\frac{x^3}{3!}+\cdots+ (-1)^n\frac{x^{2n+1}}{(2n+1)!}+\cdots,
+\end{align*}</div>
+<div>Since the Taylor series generated by the function $x \mapsto \sin(x)$ and centered at zero converges to <span class="nbr">$x \mapsto \sin(x)$,</span> by the uniqueness property of Taylor series, substituting $x$ with $x+\pi$ in the Taylor series generated by $x \mapsto \sin(x)$ centered at zero and multiplying by minus one, we obtain that the Taylor series of $f$ centered at $\pi$ is
+<div class="aligncontainer">\begin{align*}
+-(x+\pi)+\frac{(x+\pi)^3}{3!} - \cdots + (-1)^{n+1}\frac{(x+\pi)^{2n+1}}{(2n+1)!} + \cdots
+\end{align*}</div></div>\EndKnitrBlock{solution}
+</div>
+</details>
+-->
+<div class="exercise" echo="TRUE">
+<span id="exr:unlabeled-div-38" class="exercise"><strong>Exercise 1.5  </strong></span>Consider the following statement.
+<div class="thmbreak">
+<blockquote>
+<div>
+Let <span class="math inline">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> be the <span class="nbr"><span class="math inline">\(2\pi\)</span>-periodic</span> function, which for <span class="math inline">\(x \in [-\pi, \pi)\)</span> is given by
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+f(x) =
+\begin{cases}
+\hphantom{-}1 &amp; \text{if} \; x \in [0, \pi),\\
+-1 &amp; \text{if} \; x \in [-\pi, 0).
+\end{cases}
+\end{align*}\]</span>
+</div>
+<div>
+The Fourier series of <span class="math inline">\(f\)</span> converges pointwise to <span class="nbr"><span class="math inline">\(f\)</span>.</span>
+</div>
+</blockquote>
+</div>
+<div>
+Determine if the statement is true or false, giving a brief justification for your answer.
+</div>
+</div>
+<details>
+<summary>
+Show/hide solution
+</summary>
+<div class="soln">
+<div class="solution" echo="TRUE">
+<span id="unlabeled-div-39" class="solution"><em>Solution</em>. </span>Since <span class="math inline">\(f(x) \in \{-1, 1\}\)</span>, for all <span class="math inline">\(x \in \mathbb{R}\)</span>, we have that <span class="math inline">\(-1 \leq f(x) \leq 1\)</span>, for all <span class="math inline">\(x \in \mathbb{R}\)</span>, and thus <span class="math inline">\(f\)</span> is a bounded function. Further, by definition <span class="math inline">\(f\)</span> is a <span class="nbr"><span class="math inline">\(2\pi\)</span>-periodic</span> function, and since <span class="math inline">\(f\)</span> is piecewise constant, and since a piecewise constant implies piecewise smooth, <span class="math inline">\(f\)</span> is piecewise smooth. Therefore, the hypotheses of Dini’s Theorem are satisfied. Thus, the Fourier series of <span class="math inline">\(f\)</span> at <span class="math inline">\(x = 0\)</span> converges to<br />
+
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+    \frac{f(0^{+}) + f(0^{-})}{2}
+    = \frac{(\lim_{x \to 0^{+}} f(x)) + (\lim_{x \to 0^{-}} f(x))}{2}
+    = \frac{(\lim_{x \to 0^{+}} 1) + (\lim_{x \to 0^{-}} -1)}{2}
+    = \frac{1+ -1}{2} = 0.
+    \end{align*}\]</span>
+</div>
+<div>
+As <span class="math inline">\(f(0) = 1 \neq 0\)</span>, the Fourier series of <span class="math inline">\(f\)</span> does not converge pointwise to <span class="math inline">\(f\)</span>, and hence the statement is false.
+</div>
+</div>
+</div>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="taylorandfourierseriesfoundations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions-of-several-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false,
+"fig_caption": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

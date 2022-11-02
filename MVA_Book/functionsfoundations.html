@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.3 Functions | Multivariable and vector calculus</title>
+  <meta name="description" content="1.3 Functions | Multivariable and vector calculus" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.3 Functions | Multivariable and vector calculus" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.3 Functions | Multivariable and vector calculus" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vcs.html"/>
+<link rel="next" href="differentiationfoundations.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/thmhighlight.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariable and vector calculus</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Foundations (Prerequisites)</a>
+<ul>
+<li><a href="symbolsandsets.html#symbolsandsets" id="toc-symbolsandsets"><span class="toc-section-number">1.1</span> Mathematical symbols and sets</a></li>
+<li><a href="vcs.html#vcs" id="toc-vcs"><span class="toc-section-number">1.2</span> Vectors and coordinate systems</a></li>
+<li><a href="functionsfoundations.html#functionsfoundations" id="toc-functionsfoundations"><span class="toc-section-number">1.3</span> Functions</a></li>
+<li><a href="differentiationfoundations.html#differentiationfoundations" id="toc-differentiationfoundations"><span class="toc-section-number">1.4</span> Differentiation</a></li>
+<li><a href="critical_points_foundations.html#critical_points_foundations" id="toc-critical_points_foundations"><span class="toc-section-number">1.5</span> Critical points</a></li>
+<li><a href="integrationfoundations.html#integrationfoundations" id="toc-integrationfoundations"><span class="toc-section-number">1.6</span> Integration</a></li>
+<li><a href="parametriccurvesfoundations.html#parametriccurvesfoundations" id="toc-parametriccurvesfoundations"><span class="toc-section-number">1.7</span> Parametric curves</a></li>
+<li><a href="sequencesseriesfoundations.html#sequencesseriesfoundations" id="toc-sequencesseriesfoundations"><span class="toc-section-number">1.8</span> Sequences and series</a></li>
+<li><a href="taylorandfourierseriesfoundations.html#taylorandfourierseriesfoundations" id="toc-taylorandfourierseriesfoundations"><span class="toc-section-number">1.9</span> Taylor and Fourier series</a></li>
+<li><a href="practiceproblemschapterone.html#practiceproblemschapterone" id="toc-practiceproblemschapterone">Practice problems - Chapter 1</a></li>
+</ul></li>
+<li><a href="functions-of-several-variables.html#functions-of-several-variables" id="toc-functions-of-several-variables"><span class="toc-section-number">2</span> Functions of several variables</a>
+<ul>
+<li><a href="limitsparttwoFSV.html#limitsparttwoFSV" id="toc-limitsparttwoFSV"><span class="toc-section-number">2.1</span> Limits (part II)</a></li>
+<li><a href="continuityparttwoFSV.html#continuityparttwoFSV" id="toc-continuityparttwoFSV"><span class="toc-section-number">2.2</span> Continuity (part II)</a></li>
+<li><a href="practiceproblemschaptertwo.html#practiceproblemschaptertwo" id="toc-practiceproblemschaptertwo">Practice problems – Chapter 2</a></li>
+</ul></li>
+<li><a href="partialderivatives.html#partialderivatives" id="toc-partialderivatives"><span class="toc-section-number">3</span> Partial derivatives</a>
+<ul>
+<li><a href="pd.html#pd" id="toc-pd"><span class="toc-section-number">3.1</span> Partial derivatives</a></li>
+<li><a href="thechainrule.html#thechainrule" id="toc-thechainrule"><span class="toc-section-number">3.2</span> The chain rule</a></li>
+<li><a href="implicitdifferentiation.html#implicitdifferentiation" id="toc-implicitdifferentiation"><span class="toc-section-number">3.3</span> Implicit differentiation</a></li>
+<li><a href="pde.html#pde" id="toc-pde"><span class="toc-section-number">3.4</span> Partial differential equations</a></li>
+<li><a href="directionalderivative.html#directionalderivative" id="toc-directionalderivative"><span class="toc-section-number">3.5</span> Directional derivative</a></li>
+<li><a href="practiceproblemschapterthree.html#practiceproblemschapterthree" id="toc-practiceproblemschapterthree">Practice problems – Chapter 3</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multivariable and vector calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functionsfoundations" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Functions</h2>
+<div>
+<p>The concept of a function lies at the foundations of calculus. The effect that a change in one variable has on the value of another, lies at the heart of calculus and how we model real world phenomena.</p>
+</div>
+<div>
+<p>Functions relate elements of different sets. A <strong>function</strong>, <strong>mapping</strong> or <strong>transformation</strong> <span class="math inline">\(f\)</span> from a set <span class="math inline">\(A\)</span> to a set <span class="math inline">\(B\)</span> is a rule or formula that associates to each element <span class="math inline">\(a \in A\)</span> exactly one element <span class="nbr"><span class="math inline">\(f(a) \in B\)</span>.</span> We write <span class="math inline">\(f \, \colon \, A \to B\)</span> to mean that <span class="math inline">\(f\)</span> is a function from the set <span class="math inline">\(A\)</span> to the set <span class="nbr"><span class="math inline">\(B\)</span>,</span> and call <span class="math inline">\(A\)</span> the <strong>domain</strong> of <span class="nbr"><span class="math inline">\(f\)</span>,</span> denoted by <span class="nbr"><span class="math inline">\(\mathrm{Dom}(f)\)</span>,</span> and <span class="math inline">\(B\)</span> the <strong>codomain</strong> of <span class="nbr"><span class="math inline">\(f\)</span>.</span> The set of points <span class="math inline">\(\{ f(a) \, \colon \, a \in A \}\)</span> is known as the <strong>range</strong> of <span class="nbr"><span class="math inline">\(f\)</span>,</span> denoted by <span class="nbr"><span class="math inline">\(\mathrm{Ran}(f)\)</span>.</span></p>
+</div>
+<div>
+<p>Two functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are <strong>equal</strong> if and only if they have the same domain, the same range, and <span class="math inline">\(f(x) = g(x)\)</span> for all <span class="math inline">\(x\)</span> in the domain of <span class="nbr"><span class="math inline">\(f\)</span>,</span> and hence the domain of <span class="nbr"><span class="math inline">\(g\)</span>.</span></p>
+</div>
+<div>
+<p>Three, types of functions which feature heavily in real analysis, and hence calculus, are those which are injective, surjective and bijective.</p>
+</div>
+<div>
+<ul>
+<li><strong>Injective</strong> A function <span class="math inline">\(f \, \colon \, A \to B\)</span> is injective, if distinct elements of <span class="math inline">\(A\)</span> always map to distinct images in <span class="nbr"><span class="math inline">\(B\)</span>.</span> Namely, for all <span class="math inline">\(x\)</span> and <span class="nbr"><span class="math inline">\(y \in A\)</span>,</span> if <span class="nbr"><span class="math inline">\(x \neq y\)</span>,</span> then <span class="nbr"><span class="math inline">\(f(x) \neq f(y)\)</span>.</span></li>
+<li><strong>Surjective</strong> A function <span class="math inline">\(f \, \colon \, A \to B\)</span> is surjective if, for every <span class="nbr"><span class="math inline">\(b \in B\)</span>,</span> there exists a (not necessarily unique) element <span class="math inline">\(a \in A\)</span> such that <span class="nbr"><span class="math inline">\(b = f(a)\)</span>.</span></li>
+<li><strong>Bijective</strong> A mapping is bijective if it is both injective and surjective.</li>
+</ul>
+</div>
+<div>
+<p>Given two functions <span class="math inline">\(f \, \colon \, A \to B\)</span> and <span class="nbr"><span class="math inline">\(g \, \colon \, B \to C\)</span>,</span> we often want to combine these functions to give us a new function from <span class="math inline">\(A\)</span> to <span class="math inline">\(C\)</span> whose effect on an element <span class="math inline">\(a \in A\)</span> is that of first applying <span class="math inline">\(f\)</span> to <span class="math inline">\(a\)</span> and then applying <span class="math inline">\(g\)</span> to the result. This is known as the <strong>composition</strong> of <span class="math inline">\(g\)</span> with <span class="nbr"><span class="math inline">\(f\)</span>.</span> Formally, the composition of <span class="math inline">\(g\)</span> with <span class="nbr"><span class="math inline">\(f\)</span>,</span> denoted <span class="nbr"><span class="math inline">\(g \circ f\)</span>,</span> is a mapping with domain <span class="nbr"><span class="math inline">\(A\)</span>,</span> codomain <span class="nbr"><span class="math inline">\(C\)</span>,</span> and rule <span class="nbr"><span class="math inline">\(g \circ f(a) = g(f(a))\)</span>,</span> for all <span class="nbr"><span class="math inline">\(a \in A\)</span>.</span> We note that the operation of composition is associative, that is, if <span class="nbr"><span class="math inline">\(f \, \colon \, A \to B\)</span>,</span> <span class="math inline">\(g \, \colon \, B \to C\)</span> and <span class="nbr"><span class="math inline">\(h \, \colon \, C \to D\)</span>,</span> then <span class="math inline">\(h \circ (g \circ f)\)</span> and <span class="math inline">\((h \circ g) \circ f\)</span> are equal.</p>
+</div>
+<div>
+<p>Given a function <span class="math inline">\(f \, \colon \, A \to B\)</span> it is often useful to be able to talk about its <strong>inverse</strong>, if it exists. That is, a function <span class="math inline">\(g \, \colon \, B \to A\)</span> such that <span class="math inline">\(g \circ f = \mathrm{id}_{A}\)</span> and <span class="nbr"><span class="math inline">\(f \circ g = \mathrm{id}_{B}\)</span>,</span> where <span class="math inline">\(\mathbb{id}_{A} \, \colon A \to A\)</span> and <span class="math inline">\(\mathbb{id}_{B} \, \colon B \to B\)</span> are the identity functions on <span class="math inline">\(A\)</span> and <span class="nbr"><span class="math inline">\(B\)</span>,</span> respectively, and are defined by <span class="math inline">\(\mathrm{id}_{A}(a) = a\)</span> and <span class="nbr"><span class="math inline">\(\mathrm{id}_{B}(b) =b\)</span>,</span> for all <span class="math inline">\(a \in A\)</span> and <span class="nbr"><span class="math inline">\(b \in B\)</span>.</span> Note that not every function has an inverse, and when a function <span class="math inline">\(f\)</span> has an inverse, then we say that the function is <strong>invertible</strong> and denote its inverse by <span class="nbr"><span class="math inline">\(f^{-1}\)</span>.</span> The following gives a characterisation of when a function is invertible.</p>
+</div>
+<div class="thmenv">
+<div class="theorem" echo="TRUE">
+<div class="insatz">
+<span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 1.1  (invertible if and only if bijective) </strong></span>
+A function is invertible if and only if it is bijective.
+</div>
+</div>
+</div>
+<div>
+<p>In calculus, we tend to focus on functions whose domain and codomain are subsets of the real line <span class="nbr"><span class="math inline">\(\mathbb{R}\)</span>.</span> Here there are several common classes of functions. Unless otherwise stated in the following, let <span class="math inline">\(f\)</span> denote a real valued function (that is a function with codomain <span class="nbr"><span class="math inline">\(\mathbb{R}\)</span>)</span> with domain <span class="math inline">\(D \subseteq \mathbb{R}\)</span>.</p>
+</div>
+<div>
+<ul>
+<li>If <span class="math inline">\(D\)</span> is centred about zero, then <span class="math inline">\(f\)</span> is called <strong>even</strong> if <span class="math inline">\(f(x) = f(-x)\)</span> for all <span class="nbr"><span class="math inline">\(x \in D\)</span>.</span></li>
+<li>If <span class="math inline">\(D\)</span> is centred about zero, then <span class="math inline">\(f\)</span> is called <strong>odd</strong> if <span class="math inline">\(f(-x) = -f(x)\)</span> for all <span class="nbr"><span class="math inline">\(x \in D\)</span>.</span></li>
+<li>If <span class="math inline">\(f\)</span> is defined by <span class="nbr"><span class="math inline">\(f(x) = mx + c\)</span>,</span> for some fixed constants <span class="math inline">\(m\)</span> and <span class="nbr"><span class="math inline">\(c\)</span>,</span> then <span class="math inline">\(f\)</span> is called <strong>linear</strong>.</li>
+<li>If <span class="math inline">\(f\)</span> is defined by <span class="nbr"><span class="math inline">\(f(x) = x^{a}\)</span>,</span> for some fixed constant <span class="nbr"><span class="math inline">\(a\)</span>,</span> then <span class="math inline">\(f\)</span> is called a <strong>power function</strong>.</li>
+<li>We call <span class="math inline">\(f\)</span> a <strong>polynomial</strong> if f is defined by <span class="nbr"><span class="math inline">\(f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_{0}\)</span>,</span> where <span class="math inline">\(n\)</span> is a fixed non‑negative integer and <span class="nbr"><span class="math inline">\(a_{n}\)</span>,</span> <span class="nbr"><span class="math inline">\(a_{n-1}\)</span>,</span> …, <span class="nbr"><span class="math inline">\(a_{1}\)</span>,</span> <span class="math inline">\(a_{0}\)</span> are fixed constants called the <strong>coefficients</strong> of the polynomial. If the leading coefficient <span class="nbr"><span class="math inline">\(a_{n} \neq 0\)</span>,</span> then <span class="math inline">\(n\)</span> is called the <strong>degree</strong> of the polynomial.</li>
+<li>A <strong>rational function</strong> is a quotient of polynomials.</li>
+<li>A function <span class="math inline">\(f \, \colon \, \mathbb{R} \to \mathbb{R}\)</span> is called <strong>periodic</strong> if there exists a positive number <span class="math inline">\(p\)</span> such that <span class="math inline">\(f(x + p) = f(x)\)</span> for all <span class="nbr"><span class="math inline">\(x \in \mathbb{R}\)</span>.</span> The smallest such value of <span class="math inline">\(p\)</span> is called the <strong>period</strong> of <span class="nbr"><span class="math inline">\(f\)</span>.</span></li>
+</ul>
+</div>
+<div>
+<p>In order to be able to speak meaningfully about rates of change, tangent line and planes, one needs to use the concept of a limit. Indeed, the concept of a limit is the cornerstone on which the development of calculus rests.</p>
+</div>
+<div id="limitspartonefoundations" class="section level3 unnumbered unlisted">
+<h3>Limits (part I)</h3>
+<div>
+<p>In the steady flow of a river, the smooth passage of time and the majestic formation of clouds, we perceive continuity of motion. There are no sharp changes and no jumps in the movement. Through the idea of limits, calculus provides the means to study continuity rigorously. Indeed, in order to be able to speak meaningfully about rates of change, tangent line and planes, one needs to use the concept of a limit, and as such, the concept of a limit is the cornerstone on which the development of calculus rests.</p>
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:limit1" class="definition"><strong>Definition 1.3  (limits – part I) </strong></span>Let <span class="nbr"><span class="math inline">\(x_{0} \in \mathbb{R}\)</span>,</span> let <span class="math inline">\(I \subseteq \mathbb{R}\)</span> be an open interval containing <span class="math inline">\(x_{0}\)</span> and let <span class="math inline">\(f\)</span> be a real valued function defined on <span class="nbr"><span class="math inline">\(I\)</span>,</span> except possibly at <span class="nbr"><span class="math inline">\(x_{0}\)</span>.</span> We say that <span class="math inline">\(L\)</span> is the <strong>limit of <span class="math inline">\(f\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span></strong> if for every <span class="math inline">\(\epsilon &gt; 0\)</span> there exists a <span class="math inline">\(\delta &gt; 0\)</span> such that, for all <span class="math inline">\(x \in I\)</span> satisfying <span class="nbr"><span class="math inline">\(\lvert x - x_{0} \rvert &lt; \delta\)</span>,</span> we have that <span class="nbr"><span class="math inline">\(\lvert f(x) - L \rvert &lt; \epsilon\)</span>,</span> and write
+<span class="math display">\[\begin{align*}
+  \lim_{x \to x_{0}} f(x) = L.
+  \end{align*}\]</span></p>
+</div>
+</div>
+<div>
+<p>One can also speak about the limit as <span class="math inline">\(x\)</span> tends to positive and negative infinity.</p>
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:limit2" class="definition"><strong>Definition 1.4  (limits – part II) </strong></span>A real valued function <span class="math inline">\(f\)</span> defined on the half‑line <span class="nbr"><span class="math inline">\(\{ x \, \colon \, x \geq k \}\)</span>,</span> for some <span class="nbr"><span class="math inline">\(k \in \mathbb{R}\)</span>,</span> has a <strong>limit <span class="math inline">\(L\)</span> at infinity</strong>, if for every <span class="math inline">\(\epsilon &gt; 0\)</span> there exists a real number <span class="math inline">\(N &gt; 0\)</span> such that, for all <span class="nbr"><span class="math inline">\(x &gt; N\)</span>,</span> we have that <span class="nbr"><span class="math inline">\(\lvert f(x) - L \rvert &lt; \epsilon\)</span>,</span> and write
+<span class="math display">\[\begin{align*}
+\lim_{x \to \infty} f(x) = L.
+\end{align*}\]</span>
+Similarly, we say that a real valued function <span class="math inline">\(f\)</span> defined on the half‑line <span class="nbr"><span class="math inline">\(\{ x \, \colon x \leq k \}\)</span>,</span> for some <span class="nbr"><span class="math inline">\(k \in \mathbb{R}\)</span>,</span> has a <strong>limit <span class="math inline">\(L\)</span> at negative infinity</strong>, if for every <span class="math inline">\(\epsilon &gt; 0\)</span> there exists a real number <span class="math inline">\(N &lt; 0\)</span> so that, for all <span class="nbr"><span class="math inline">\(x &lt; N\)</span>,</span> we have <span class="nbr"><span class="math inline">\(\lvert f(x) - L \rvert &lt; \epsilon\)</span>,</span> and write
+<span class="math display">\[\begin{align*}
+\lim_{x \to -\infty} f(x) = L.
+\end{align*}\]</span></p>
+</div>
+</div>
+<div>
+Let <span class="nbr"><span class="math inline">\(L\)</span>,</span> <span class="nbr"><span class="math inline">\(M\)</span>,</span> <span class="math inline">\(k\)</span> and <span class="math inline">\(x_{0}\)</span> denote four real numbers, and let <span class="math inline">\(I \subseteq \mathbb{R}\)</span> denote an open interval containing <span class="nbr"><span class="math inline">\(x_{0}\)</span>.</span> If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are two real valued functions defined on <span class="nbr"><span class="math inline">\(I\)</span>,</span> except possibly at <span class="math inline">\(x_{0}\)</span> itself, such that
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+\lim_{x \to x_{0}} f(x) = L
+\quad \text{and} \quad
+\lim_{x \to x_{0}} g(x) = M,
+\end{align*}\]</span>
+</div>
+<div>
+<p>then we have the following:</p>
+</div>
+<div class="no_break_list">
+<ul>
+<li><p><span class="math inline">\(\displaystyle \lim_{x \to x_{0}} f(x) \pm g(x) = L \pm M\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{x \to x_{0}} k f(x) = k L\)</span>, and</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{x \to x_{0}} f(x) g(x) = L M\)</span>.</p></li>
+</ul>
+</div>
+<div>
+<p>If in addition, <span class="math inline">\(L\)</span> is positive, <span class="math inline">\(M\)</span> is non-zero, and <span class="math inline">\(n\)</span> is a positive real number, then</p>
+</div>
+<div class="no_break_list">
+<ul>
+<li><p><span class="math inline">\(\displaystyle \lim_{x \to x_{0}} \frac{f(x)}{g(x)} = \frac{L}{M}\)</span>, and</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{x \to x_{0}} (f(x))^{n} = L ^{n}.\)</span></p></li>
+</ul>
+</div>
+<div>
+<p>The above equalities also hold when we replace <span class="math inline">\(x_{0}\)</span> by positive infinity and when <span class="math inline">\(x_{0}\)</span> is replaced by negative infinity. Further, if <span class="math inline">\(f(x) \leq g(x)\)</span> for all <span class="math inline">\(x\)</span> in some <span class="nbr">non-empty</span> open interval about a point <span class="nbr"><span class="math inline">\(x_{0}\)</span>,</span> except possibly at <span class="math inline">\(x_{0}\)</span> itself, and the limits of <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> both exist as <span class="math inline">\(x\)</span> approaches <span class="nbr"><span class="math inline">\(x_{0}\)</span>,</span> and are denoted by <span class="math inline">\(L\)</span> and <span class="math inline">\(M\)</span> respectively, then <span class="math inline">\(L \leq M\)</span>.</p>
+</div>
+<div>
+<p>The concept of a limit can be extended to that of a one‑sided limit, where one considers the limit as <span class="math inline">\(x\)</span> approaches a number <span class="math inline">\(c\)</span> from the left‑hand side only, or the right‑hand side only.</p>
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:limit3" class="definition"><strong>Definition 1.5  (one-sided limits) </strong></span>Let <span class="nbr"><span class="math inline">\(x_{0} \in \mathbb{R}\)</span>,</span> <span class="math inline">\(I \subseteq \mathbb{R}\)</span> be an interval containing <span class="math inline">\(x_{0}\)</span> and let <span class="math inline">\(f\)</span> be a real valued function defined on <span class="nbr"><span class="math inline">\(I\)</span>,</span> except possibly at <span class="nbr"><span class="math inline">\(x_{0}\)</span>.</span> We say that <span class="math inline">\(L\)</span> is the <strong>right‑limit of <span class="math inline">\(f\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span></strong> if for every <span class="math inline">\(\epsilon &gt; 0\)</span> there exists a <span class="math inline">\(\delta &gt; 0\)</span> such that, for all <span class="math inline">\(x \in I\)</span> satisfying <span class="nbr"><span class="math inline">\(x_{0} &lt; x &lt; x_{0} + \delta\)</span>,</span> we have that <span class="nbr"><span class="math inline">\(\lvert f(x) - L \rvert &lt; \epsilon\)</span>,</span> and write
+<span class="math display">\[\begin{align*}
+  \lim_{x \to x_{0}^{+}} f(x) = L.
+  \end{align*}\]</span>
+Similarly, we say that <span class="math inline">\(L\)</span> is the <strong>left‑hand limit of <span class="math inline">\(f\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(x_{0}\)</span></strong> if for every <span class="math inline">\(\epsilon &gt; 0\)</span> there exists a <span class="math inline">\(\delta &gt; 0\)</span> such that, for all <span class="math inline">\(x\)</span> satisfying <span class="math inline">\(x_{0} -\delta &lt; x &lt; x_{0}\)</span> in the domain of <span class="nbr"><span class="math inline">\(f\)</span>,</span> we have that <span class="nbr"><span class="math inline">\(\lvert f(x) - L \rvert &lt; \epsilon\)</span>,</span> and write
+<span class="math display">\[\begin{align*}
+  \lim_{x \to x_{0}^{-}} f(x) = L.
+  \end{align*}\]</span></p>
+</div>
+</div>
+<p>Observe that if the limit of a function exists, then both the left‑hand and right‑hand limits exist. However, the converse is not true.</p>
+</div>
+<div id="continuitypartonefoundations" class="section level3 unnumbered unlisted">
+<h3>Continuity (part I)</h3>
+<p>Informally, any function <span class="math inline">\(f\)</span> whose graph can be sketched over its domain in one continuous motion without lifting ones pencil, is an example of a continuous function. To define continuity formally we use the notion of a limit.</p>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:continuity" class="definition"><strong>Definition 1.6  (continuity – part I) </strong></span>Let <span class="math inline">\(I\)</span> denote a <span class="nbr">non-empty</span> interval and let <span class="nbr"><span class="math inline">\(f \, \colon \, I \to \mathbb{R}\)</span>.</span></p>
+<ul>
+<li>If <span class="math inline">\(x_{0}\)</span> is an interior point of <span class="nbr"><span class="math inline">\(I\)</span>,</span> then <span class="math inline">\(f\)</span> is <strong>continuous at <span class="math inline">\(x_{0}\)</span></strong> if
+<span class="math display">\[\begin{align*}
+\lim_{x \to x_{0}} f(x) = f(x_{0}).\qquad
+\end{align*}\]</span></li>
+<li>If <span class="math inline">\(a\)</span> is a left boundary point of <span class="math inline">\(I\)</span> and <span class="nbr"><span class="math inline">\(a \in I\)</span>,</span> then <span class="math inline">\(f\)</span> is <strong>continuous at <span class="math inline">\(a\)</span></strong> if
+<span class="math display">\[\begin{align*}
+\lim_{x \to x_{0}^{+}} f(x) = f(x_{0}).\qquad
+\end{align*}\]</span></li>
+<li>If <span class="math inline">\(b\)</span> is a right boundary point of <span class="math inline">\(I\)</span> and <span class="nbr"><span class="math inline">\(b \in I\)</span>,</span> then <span class="math inline">\(f\)</span> is <strong>continuous at <span class="math inline">\(b\)</span></strong> if
+<span class="math display">\[\begin{align*}
+\lim_{x \to x_{0}^{-}} f(x) = f(x_{0}).\qquad
+\end{align*}\]</span></li>
+<li>We say that <span class="math inline">\(f\)</span> is <strong>continuous</strong> if it is continuous at <span class="math inline">\(x\)</span> for all <span class="nbr"><span class="math inline">\(x \in I\)</span>.</span> On the other hand, if <span class="math inline">\(f\)</span> is not continuous at a point <span class="nbr"><span class="math inline">\(x_{0}\)</span>,</span> then <span class="math inline">\(f\)</span> is said to be <strong>discontinuous</strong> and <span class="math inline">\(x_{0}\)</span> is called a <strong>point of discontinuity</strong>.</li>
+</ul>
+</div>
+</div>
+<div>
+If they exist, then sums, products, quotients, powers and roots of continuous functions are again continuous. Further, if <span class="math inline">\(f\)</span> is a continuous real valued function at <span class="math inline">\(x_{0} \in \mathbb{R}\)</span> and <span class="math inline">\(g\)</span> is a continuous real valued function at <span class="nbr"><span class="math inline">\(f(x_{0}) \in \mathbb{R}\)</span>,</span> then the composite function <span class="math inline">\(g \circ f\)</span> is continuous at <span class="nbr"><span class="math inline">\(x_{0}\)</span>.</span> Moreover, if <span class="math inline">\(g\)</span> is a continuous real valued function at <span class="math inline">\(b \in \mathbb{R}\)</span> and the limit as <span class="math inline">\(x \to x_{0}\)</span> of <span class="math inline">\(f(x)\)</span> exists and is equal to <span class="nbr"><span class="math inline">\(b\)</span>,</span> then
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+\lim_{x \to x_{0}} g (f(x)) = g(b) = g\left(\lim_{x \to x_{0}} f(x)\right).
+\end{align*}\]</span>
+</div>
+<div>
+<p>An extremely powerful and useful result concerning continuous functions is the intermediate value theorem.</p>
+</div>
+<div class="thmenv">
+<div class="theorem" echo="TRUE">
+<div class="insatz">
+<span id="thm:unlabeled-div-7" class="theorem"><strong>Theorem 1.2  (intermediate value theorem) </strong></span>
+If <span class="math inline">\(f\)</span> is a continuous real valued function with domain <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(y_{0}\)</span> lies between <span class="math inline">\(f(a)\)</span> and <span class="nbr"><span class="math inline">\(f(b)\)</span>,</span> then there exists <span class="math inline">\(c \in [a, b]\)</span> with <span class="nbr"><span class="math inline">\(f(c) = y_{0}\)</span>.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vcs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="differentiationfoundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false,
+"fig_caption": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

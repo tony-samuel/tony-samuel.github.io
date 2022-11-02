@@ -1,0 +1,255 @@
+
+
+.book .thmenv {
+  display: block;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: WhiteSmoke;
+  color: rgb(56,56,56);
+  border-style: solid;
+  border-width: thin;
+  border-color: Gainsboro;
+}
+
+.book.color-theme-1 .thmenv {
+  display: block;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: #fdf6e3;
+  color: #657b83;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(226,217,189);
+}
+
+.book.color-theme-2 .thmenv {
+  display: block;
+  background: rgb(45,49,67);
+  color: rgb(157,190,216);
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+
+img {
+  padding: 1em;
+}
+
+.book img {
+  filter: invert(0%);
+}
+
+.book.color-theme-1 img {
+  filter: sepia(100%);
+}
+
+.book.color-theme-2 img {
+  filter: invert(100%);
+}
+
+.book .caption {
+  color: rgb(51,51,51);
+}
+
+.book.color-theme-1 .caption {
+  color: rgb(112,66,20);
+}
+            
+.book.color-theme-2 .caption {
+  color: rgb(189,202,219);
+}           
+
+.book.font-size-0 img {
+  width: 30%;
+  min-width: 300px;
+}
+
+.book.font-size-1 img {
+  width: 35%;
+  min-width: 325px;
+}
+
+.book.font-size-2 img {
+  width: 40%;
+  min-width: 350px;
+}
+
+.book.font-size-3 img {
+  width: 65%;
+  min-width: 400px;
+}
+
+.book.font-size-4 img {
+  width: 80%;
+  min-width: 700px;
+}
+
+.zoom1 {
+}
+
+.book.font-size-0 .zoom1 img {
+  width: 55%;
+  min-width: 300px;
+}
+
+.book.font-size-1 .zoom1 img {
+  width: 60%;
+  min-width: 325px;
+}
+
+.book.font-size-2 .zoom1 img {
+  width: 65%;
+  min-width: 350px;
+}
+
+.book.font-size-3 .zoom1 img {
+  width: 90%;
+  min-width: 400px;
+}
+
+.book.font-size-4 .zoom1 img {
+  width: 100%;
+  min-width: 700px;
+}
+
+
+.zoom2 {
+}
+
+.book.font-size-0 .zoom2 img {
+  width: 28%;
+  min-width: 150px;
+}
+
+.book.font-size-1 .zoom2 img {
+  width: 33%;
+  min-width: 175px;
+}
+
+.book.font-size-2 .zoom2 img {
+  width: 40%;
+  min-width: 225px;
+}
+
+.book.font-size-3 .zoom2 img {
+  width: 65%;
+  min-width: 300px;
+}
+
+.book.font-size-4 .zoom2 img {
+  width: 80%;
+  min-width: 500px;
+}
+
+
+summary {
+  outline:none;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  cursor:pointer;
+}
+
+.book summary {
+  color:rgb(65,131,196);
+}
+
+.book.color-theme-1 summary {
+  color: rgb(112,66,20);
+}
+
+.book.color-theme-2 summary {
+  color: rgb(244,244,245);;
+}
+
+details .math {
+  zoom: 0.9;
+}
+
+.book .soln {
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  background: WhiteSmoke;
+  color: rgb(56,56,56);
+  border-style: solid;
+  border-width: thin;
+  border-color: Gainsboro;
+}
+
+.book.color-theme-1 .soln {
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #fdf6e3;
+  color: #657b83;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(226,217,189);
+}
+
+.book.color-theme-2 .soln {
+  display: block;
+  background: rgb(45,49,67);
+  color: rgb(157,190,216);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+
+.book .pfsh {
+  display: block;
+  padding: 1em 1em 2.5em 1em; 
+  margin-bottom: 1em;
+  background: WhiteSmoke;
+  color: rgb(56,56,56);
+  border-style: solid;
+  border-width: thin;
+  border-color: Gainsboro;
+}
+
+.book.color-theme-1 .pfsh {
+  display: block;
+  padding: 1em 1em 2.5em 1em; 
+  margin-bottom: 1em;
+  background: #fdf6e3;
+  color: #657b83;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(226,217,189);
+}
+
+.book.color-theme-2 .pfsh {
+  display: block;
+  background: rgb(45,49,67);
+  color: rgb(157,190,216);
+  padding: 1em 1em 2.5em 1em; 
+  margin-bottom: 1em;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+
+.details .kodesh {
+  display: block;
+  padding: 0.5em; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
