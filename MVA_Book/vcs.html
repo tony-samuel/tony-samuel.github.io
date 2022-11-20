@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.2 Vectors and coordinate systems | Multivariable and vector calculus</title>
+  <meta name="description" content="1.2 Vectors and coordinate systems | Multivariable and vector calculus" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.2 Vectors and coordinate systems | Multivariable and vector calculus" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.2 Vectors and coordinate systems | Multivariable and vector calculus" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="symbolsandsets.html"/>
+<link rel="next" href="functionsfoundations.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/thmhighlight.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariable and vector calculus</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li><a href="intro.html#intro" id="toc-intro"><span class="toc-section-number">1</span> Foundations (Prerequisites)</a>
+<ul>
+<li><a href="symbolsandsets.html#symbolsandsets" id="toc-symbolsandsets"><span class="toc-section-number">1.1</span> Mathematical symbols and sets</a></li>
+<li><a href="vcs.html#vcs" id="toc-vcs"><span class="toc-section-number">1.2</span> Vectors and coordinate systems</a></li>
+<li><a href="functionsfoundations.html#functionsfoundations" id="toc-functionsfoundations"><span class="toc-section-number">1.3</span> Functions</a></li>
+<li><a href="differentiationfoundations.html#differentiationfoundations" id="toc-differentiationfoundations"><span class="toc-section-number">1.4</span> Differentiation</a></li>
+<li><a href="critical_points_foundations.html#critical_points_foundations" id="toc-critical_points_foundations"><span class="toc-section-number">1.5</span> Critical points</a></li>
+<li><a href="integrationfoundations.html#integrationfoundations" id="toc-integrationfoundations"><span class="toc-section-number">1.6</span> Integration</a></li>
+<li><a href="parametriccurvesfoundations.html#parametriccurvesfoundations" id="toc-parametriccurvesfoundations"><span class="toc-section-number">1.7</span> Parametric curves</a></li>
+<li><a href="sequencesseriesfoundations.html#sequencesseriesfoundations" id="toc-sequencesseriesfoundations"><span class="toc-section-number">1.8</span> Sequences and series</a></li>
+<li><a href="taylorandfourierseriesfoundations.html#taylorandfourierseriesfoundations" id="toc-taylorandfourierseriesfoundations"><span class="toc-section-number">1.9</span> Taylor and Fourier series</a></li>
+<li><a href="practiceproblemschapterone.html#practiceproblemschapterone" id="toc-practiceproblemschapterone">Practice problems - Chapter 1</a></li>
+</ul></li>
+<li><a href="functions-of-several-variables.html#functions-of-several-variables" id="toc-functions-of-several-variables"><span class="toc-section-number">2</span> Functions of several variables</a>
+<ul>
+<li><a href="limitsparttwoFSV.html#limitsparttwoFSV" id="toc-limitsparttwoFSV"><span class="toc-section-number">2.1</span> Limits (part II)</a></li>
+<li><a href="continuityparttwoFSV.html#continuityparttwoFSV" id="toc-continuityparttwoFSV"><span class="toc-section-number">2.2</span> Continuity (part II)</a></li>
+<li><a href="practiceproblemschaptertwo.html#practiceproblemschaptertwo" id="toc-practiceproblemschaptertwo">Practice problems – Chapter 2</a></li>
+</ul></li>
+<li><a href="partialderivatives.html#partialderivatives" id="toc-partialderivatives"><span class="toc-section-number">3</span> Partial derivatives</a>
+<ul>
+<li><a href="pd.html#pd" id="toc-pd"><span class="toc-section-number">3.1</span> Partial derivatives</a></li>
+<li><a href="thechainrule.html#thechainrule" id="toc-thechainrule"><span class="toc-section-number">3.2</span> The chain rule</a></li>
+<li><a href="implicitdifferentiation.html#implicitdifferentiation" id="toc-implicitdifferentiation"><span class="toc-section-number">3.3</span> Implicit differentiation</a></li>
+<li><a href="pde.html#pde" id="toc-pde"><span class="toc-section-number">3.4</span> Partial differential equations</a></li>
+<li><a href="directionalderivative.html#directionalderivative" id="toc-directionalderivative"><span class="toc-section-number">3.5</span> Directional derivative</a></li>
+<li><a href="practiceproblemschapterthree.html#practiceproblemschapterthree" id="toc-practiceproblemschapterthree">Practice problems – Chapter 3</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multivariable and vector calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vcs" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Vectors and coordinate systems</h2>
+<div id="vectorsfoundations" class="section level3 unnumbered unlisted">
+<h3>Vectors</h3>
+<div>
+<p>Quantities such as length, area and volume have magnitude only and can be completely understood by a single real number together with an appropriate unit of measurement. Such quantities are called <strong>scalar quantities</strong>, and the corresponding real number is called a <strong>scalar</strong>. Other quantities such as such as velocity, acceleration and force, which have both magnitude and direction are often represented by a directional directed line segment, or more formally a <strong>vector</strong>.</p>
+</div>
+<div>
+<p>Given two points <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> we use the notation <span class="math inline">\(\overrightarrow{pq}\)</span> to denote the vector with <strong>initial point</strong> <span class="math inline">\(p\)</span> and <strong>terminal point</strong> <span class="nbr"><span class="math inline">\(q\)</span>,</span> and indicate the direction of the of the vector by placing an arrow above the two letters. The <strong>magnitude</strong> of <span class="math inline">\(\overrightarrow{pq}\)</span> is given by the length of the straight line segment joining <span class="math inline">\(p\)</span> to <span class="math inline">\(q\)</span> and is commonly denoted by <span class="nbr"><span class="math inline">\(\lvert \overrightarrow{pq} \rvert\)</span>.</span> When the initial and terminal points of a vector and not explicitly stated we use boldface letters, such as <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> to denote a vector.</p>
+</div>
+<div>
+<p>In calculus a vector is determined only by its magnitude and direction, and not by it location, and as such, two vectors with the same magnitude and direction are said to be <strong>equal</strong>. Thus, translating a vector from one location to another, provided neither the magnitude nor direction is changed, does not alter the properties of the vector.</p>
+</div>
+<div>
+<p>If <span class="math inline">\(\mathbf{v}\)</span> is a given vector in <span class="math inline">\(\mathbb{R}^{2}\)</span> or <span class="nbr"><span class="math inline">\(\mathbb{R}^{3}\)</span>,</span> then as discussed above, there are many vectors that <span class="math inline">\(\mathbf{v}\)</span> is equivalent to. However, there is precisely one vector with initial point the origin which is equivalent to <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>.</span> Thus, each vector determines a unique order list of real numbers, <span class="nbr"><span class="math inline">\((v_{1}, v_{2})\)</span>,</span> if <span class="math inline">\(\mathbf{v}\)</span> is a vector in <span class="nbr"><span class="math inline">\(\mathbb{R}^{2}\)</span>,</span> and <span class="nbr"><span class="math inline">\((v_{1}, v_{2}, v_{3})\)</span>,</span> if <span class="math inline">\(\mathbf{v}\)</span> is a vector in <span class="nbr"><span class="math inline">\(\mathbb{R}^{3}\)</span>.</span> Conversely, every ordered list of real numbers <span class="math inline">\((v_{1}, v_{2})\)</span> or <span class="nbr"><span class="math inline">\((v_{1}, v_{2}, v_{3})\)</span>,</span> determine a vector, namely <span class="math inline">\(\overrightarrow{oa}\)</span> where <span class="math inline">\(o\)</span> represents the origin and <span class="math inline">\(a\)</span> has the coordinates <span class="math inline">\((v_{1}, v_{2})\)</span> if we are working in <span class="nbr"><span class="math inline">\(\mathbb{R}^{2}\)</span>,</span> or <span class="math inline">\((v_{1}, v_{2}, v_{3})\)</span> if we are working in <span class="nbr"><span class="math inline">\(\mathbb{R}^{3}\)</span>.</span> In other words there is a one‑to‑one correspondence between ordered lists of real numbers and vectors. This leads us to the following definition which gives a standard way to represent vectors.</p>
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<div class="insatz">
+<span id="def:unlabeled-div-2" class="definition"><strong>Definition 1.2  (vector component form) </strong></span>
+If <span class="nbr"><span class="math inline">\(u = (u_{1}, u_{2}) \in \mathbb{R}^{2}\)</span>,</span> <span class="nbr"><span class="math inline">\(v = (v_{1}, v_{2}, v_{3})\)</span>,</span> <span class="math inline">\(\mathbf{u} = \overrightarrow{ou}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \overrightarrow{ov}\)</span>,</span> then the <strong>component forms</strong> of <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> are given by <span class="math inline">\(\langle u_{1}, u_{2} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\langle v_{1}, v_{2}, v_{3} \rangle\)</span>,</span> respectively.
+</div>
+</div>
+</div>
+<div>
+With this notation at hand, we have a convenient way to compute the magnitude of a vector. Namely, if <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \langle v_{1}, v_{2}, v_{2} \rangle\)</span>,</span> then
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \lvert \mathbf{u} \rvert = (u_{1}^{2} + u_{2}^{2})^{1/2}
+  \quad \text{and} \quad
+  \lvert \mathbf{v} \rvert = (v_{1}^{2} + v_{2}^{2} + v_{3}^{2})^{1/2},
+  \end{align*}\]</span>
+</div>
+<div>
+<p>We often refer to <span class="nbr"><span class="math inline">\(\lvert \mathbf{u} \rvert\)</span>,</span> and <span class="nbr"><span class="math inline">\(\lvert \mathbf{v} \rvert\)</span>,</span> as the <strong>norm</strong> of <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>,</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> respectively.</p>
+</div>
+<div>
+<p>Two useful vector operations are vector addition and scalar multiplication.</p>
+</div>
+<div>
+<ul>
+<li><p><strong>Vector addition</strong> Letting <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2} \rangle\)</span> and <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2} \rangle\)</span> denote two vectors in <span class="nbr"><span class="math inline">\(\mathbb{R}^{2}\)</span>,</span> we define the <strong>sum</strong> of <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> by <span class="nbr"><span class="math inline">\(\mathbf{u} + \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=\langle u_{1} + v_{1}, u_{2} + v_{2} \rangle\)</span>.</span> Similarly, if <span class="math inline">\(\mathbf{p} = \langle p_{1}, p_{2}, p_{3} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{q} = \langle q_{1}, q_{2}, q_{3} \rangle\)</span>,</span> then the sum of <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> is defined by <span class="nbr"><span class="math inline">\(\mathbf{p} + \mathbf{q} \,{\colon}\mathrel{\mkern-5mu}=\langle p_{1} + q_{1}, p_{2} + q_{2}, p_{3} + q_{3} \rangle\)</span>.</span> A geometric interpretation of this is letting <span class="math inline">\(\mathbf{u}\)</span> be fixed, and then translating <span class="math inline">\(\mathbf{v}\)</span> so that its initial point is the same as the terminal point of <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>.</span> Note we can only add vectors of the same dimension.</p></li>
+<li><p><strong>Scalar multiplication</strong> This vector operation allows us to stretch and compress vectors. Given a scalar (real number) <span class="math inline">\(k\)</span> and a vector <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> then we define <span class="math inline">\(k \mathbf{v}\)</span> to be the vector whose magnitude is <span class="math inline">\(\lvert k \rvert\)</span> times the magnitude <span class="math inline">\(\lvert \mathbf{v} \rvert\)</span> of <span class="math inline">\(\mathbf{v}\)</span> and whose direction is either the same as that of <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> if <span class="nbr"><span class="math inline">\(k &gt; 0\)</span>,</span> or opposite to that of <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> if <span class="nbr"><span class="math inline">\(k &lt; 0\)</span>.</span> We refer to <span class="math inline">\(k \mathbf{v}\)</span> as the <strong>scalar multiple</strong> of <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>.</span> Note, two vectors are parallel, if and only if they are scalar multiples of each other.</p></li>
+</ul>
+</div>
+<div>
+Two special types of vectors are the zero vector and unit vectors. The <strong>zero vector</strong>, denoted by <span class="nbr"><span class="math inline">\(\mathbf{0}\)</span>,</span> is the unique vector with magnitude zero and has component form <span class="math inline">\(\langle 0, 0 \rangle\)</span> in <span class="nbr"><span class="math inline">\(\mathbb{R}^{2}\)</span>,</span> and <span class="math inline">\(\langle 0, 0, 0 \rangle\)</span> in <span class="nbr"><span class="math inline">\(\mathbb{R}^{3}\)</span>.</span> A <strong>unit vector</strong> is a vector with magnitude one. In <span class="math inline">\(\mathbb{R}^{2}\)</span> there are two <strong>standard unit vectors</strong>, namely
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \mathbf{i} \,{\colon}\mathrel{\mkern-5mu}=\langle 1, 0 \rangle
+  \quad \text{and} \quad
+  \mathbf{j} \,{\colon}\mathrel{\mkern-5mu}=\langle 0, 1 \rangle,
+  \end{align*}\]</span>
+</div>
+<div>
+from which all two dimensional vectors can be built using vector addition and scalar multiplication; and in <span class="math inline">\(\mathbf{R}^{3}\)</span> there are three <strong>standard unit vectors</strong>, namely
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \mathbf{i} \,{\colon}\mathrel{\mkern-5mu}=\langle 1, 0, 0 \rangle,
+  \quad
+  \mathbf{j} \,{\colon}\mathrel{\mkern-5mu}=\langle 0, 1, 0 \rangle
+  \quad \text{and} \quad
+  \mathbf{k} \,{\colon}\mathrel{\mkern-5mu}=\langle 0, 0, 1 \rangle
+  \end{align*}\]</span>
+</div>
+<div>
+from which all three dimensional vectors can be built using vector addition and scalar multiplication.
+</div>
+<div class="thmenv">
+<div class="proposition" echo="TRUE">
+<p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 1.1  (properties of vector addition and scalar multiplication) </strong></span>Let <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>,</span> <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> denote three vectors of the same dimension, and let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote two scalars (real numbers).</p>
+<div class="no_break_list">
+<ul>
+<li><span class="math inline">\(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\)</span></li>
+<li><span class="math inline">\((\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})\)</span></li>
+<li><span class="math inline">\(\mathbf{u} + \mathbf{0} = \mathbf{u}\)</span></li>
+<li><span class="math inline">\(\mathbf{u} + (- \mathbf{u}) = \mathbf{0}\)</span></li>
+<li><span class="math inline">\(0 \, \mathbf{u} = \mathbf{0}\)</span></li>
+<li><span class="math inline">\(1 \, \mathbf{u} = \mathbf{u}\)</span></li>
+<li><span class="math inline">\(a \, (b \, \mathbf{u}) = (a \, b) \, \mathbf{u}\)</span></li>
+<li><span class="math inline">\(a \, (\mathbf{u} + \mathbf{v}) = a \, \mathbf{u} + b \mathbf{v}\)</span></li>
+<li><span class="math inline">\((a + b) \, \mathbf{u} = a \, \mathbf{u} + b \mathbf{v}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<p>We will conclude our recollection of vector geometry with a short discussion on two heavily used concepts the dot product and the cross product.</p>
+</div>
+<div>
+Geometrically the <strong>dot product</strong> of two vectors <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> written <span class="nbr"><span class="math inline">\(\mathbf{u} \cdot \mathbf{v}\)</span>,</span> is the length of the shadow that <span class="math inline">\(\mathbf{v}\)</span> casts on <span class="math inline">\(\mathbf{u}\)</span> multiplied by the magnitude <span class="math inline">\(\lvert \mathbf{u} \rvert\)</span> of <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>.</span> Algebraically, we can write this as
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \mathbf{u} \cdot \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=\lvert \mathbf{u} \rvert \lvert \mathbf{v} \rvert \cos(\theta),
+  \end{align*}\]</span>
+</div>
+<div>
+where <span class="math inline">\(\theta\)</span> denotes the acute angle between <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>.</span> As such, two non‑zero vectors are orthogonal if and only if their dot product equals zero. Further, from this identity, one can show that
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \lvert \mathbf{u} + \mathbf{v} \rvert \leq \lvert \mathbf{u} \rvert + \lvert \mathbf{v} \rvert.
+  \end{align*}\]</span>
+</div>
+<div>
+<p>This inequality is known as a <strong>triangle inequality</strong>.</p>
+</div>
+<div>
+<p>Letting <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \langle v_{1}, v_{2} \rangle\)</span>,</span> a convenient way to compute their dot product is <span class="nbr"><span class="math inline">\(\mathbf{u} \cdot \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=u_{1}v_{1} + u_{2}v_{2}\)</span></span>, and if <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2}, u_{3} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \langle v_{1}, v_{2}, v_{3} \rangle\)</span>,</span> then <span class="nbr"><span class="math inline">\(\mathbf{u} \cdot \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=u_{1}v_{1} + u_{2}v_{2} + u_{3}v_{3}\)</span></span>.</p>
+</div>
+<div class="thmenv">
+<div class="proposition" echo="TRUE">
+<p><span id="prp:unlabeled-div-4" class="proposition"><strong>Proposition 1.2  (properties of the dot product) </strong></span>Let <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>,</span> <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> denote three vectors of the same dimension, and let <span class="math inline">\(a\)</span> denote a scalar (real number).</p>
+<div class="no_break_list">
+<ul>
+<li><span class="math inline">\(\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}\)</span></li>
+<li><span class="math inline">\((c\,\mathbf{u}) \cdot \mathbf{v} = \mathbf{u} \cdot (c\,\mathbf{v}) = c\,(\mathbf{u} \cdot \mathbf{v})\)</span></li>
+<li><span class="math inline">\(\mathbf{u} \cdot ( \mathbf{v} + \mathbf{w} ) = \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w}\)</span></li>
+<li><span class="math inline">\(\mathbf{u} \cdot \mathbf{u} = \lvert \mathbf{u} \rvert^{2}\)</span></li>
+<li><span class="math inline">\(\mathbf{0} \cdot \mathbf{u} = 0\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+Another important vector product we will be concerned with is the <strong>cross product</strong> of two vectors <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> denoted by <span class="nbr"><span class="math inline">\(\mathbf{u} \times \mathbf{v}\)</span>.</span> It is often used in physics and engineering to describe rotational effects produced by forces. Unlike the dot product which is a scalar, the cross product is a vector. Geometrically, it is a vector orthogonal to both <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>,</span> whose magnitude equals the area of the parallelogram determined by <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>.</span> Algebraically, if <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \langle v_{1}, v_{2} \rangle\)</span>,</span> then
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \mathbf{u} \times \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=\begin{vmatrix} u_{1} &amp; u_{2}\\ v_{1} &amp; v_{2} \end{vmatrix} = (u_{1}v_{2} - u_{2}v_{1}) \mathbf{k},
+  \end{align*}\]</span>
+</div>
+<div>
+and if <span class="math inline">\(\mathbf{u} = \langle u_{1}, u_{2}, u_{3} \rangle\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v} = \langle v_{1}, v_{2}, v_{3} \rangle\)</span>,</span> then
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \mathbf{u} \times \mathbf{v} \,{\colon}\mathrel{\mkern-5mu}=\begin{vmatrix}
+    \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}\\
+    u_{1} &amp; u_{2} &amp; u_{3}\\
+    v_{1} &amp; v_{2} &amp; v_{3} \end{vmatrix}
+  = (u_{2}v_{3} - u_{3}v_{2})\mathbf{i} + (u_{3}v_{1}-u_{1}v_{3})\mathbf{j} + (u_{1}v_{2} - u_{2}v_{1}) \mathbf{k}.
+  \end{align*}\]</span>
+</div>
+<div>
+<p>Further, <span class="nbr"><span class="math inline">\(\lvert \mathbf{u} \times \mathbf{v} \rvert = \lvert u \rvert \, \lvert v \rvert \, \lvert \sin(\theta) \rvert\)</span></span>, where <span class="math inline">\(\theta\)</span> denotes the acute angle between <span class="math inline">\(\mathbf{u}\)</span> and <span class="nbr"><span class="math inline">\(\mathbf{v}\)</span>.</span> Thus, two non‑zero vectors are parallel, if and only if their cross product is equal to the zero vector.</p>
+</div>
+<div class="thmenv">
+<div class="proposition" echo="TRUE">
+<p><span id="prp:unlabeled-div-5" class="proposition"><strong>Proposition 1.3  (properties of the cross product) </strong></span>Let <span class="nbr"><span class="math inline">\(\mathbf{u}\)</span>,</span> <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> denote three vectors of the same dimension, and let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote two scalars (real numbers).</p>
+<div class="no_break_list">
+<ul>
+<li><span class="math inline">\(r \, \mathbf{u} \times s \, \mathbf{v} = r s \, (\mathbf{u} \times \mathbf{v})\)</span></li>
+<li><span class="math inline">\(\mathbf{u} \times (\mathbf{v} + \mathbf{w}) = (\mathbf{u} \times \mathbf{v}) + (\mathbf{u} \times \mathbf{w})\)</span></li>
+<li><span class="math inline">\((\mathbf{u} + \mathbf{v}) \times \mathbf{w} = (\mathbf{u} \times \mathbf{w}) + (\mathbf{v} \times \mathbf{w})\)</span></li>
+<li><span class="math inline">\(\mathbf{u} \times \mathbf{v} = - \mathbf{v} \times \mathbf{u}\)</span></li>
+<li><span class="math inline">\(\mathbf{0} \times \mathbf{u} = \mathbf{0}\)</span></li>
+<li><span class="math inline">\(\mathbf{u} \times (\mathbf{v} \times \mathbf{w}) = (\mathbf{u} \cdot \mathbf{w}) \, \mathbf{v} - (\mathbf{u}\cdot \mathbf{v}) \, \mathbf{w}\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="coordinatesystemsfoundations" class="section level3 unnumbered unlisted">
+<h3>Coordinate systems</h3>
+<div>
+<p>In two dimensions, when representing <span class="math inline">\(\mathbb{R}^{2}\)</span>, we usually use Cartesian coordinates, namely where we view the plane with <em>rectangular eyes</em>. Namely we designate a point to represent the origin, and then classify their distance from the origin via a horizontal distance and a vertical distance. Formally, the ordered pair <span class="math inline">\((a, b)\)</span> denotes the point whose distance from the <span class="nbr"><span class="math inline">\(x\)</span>-</span> and <span class="nbr"><span class="math inline">\(y\)</span>-axes</span> are <span class="math inline">\(b\)</span> and <span class="nbr"><span class="math inline">\(a\)</span>,</span> respectively. However, investigating planar curves (for instances, circles, ellipses and spirals) with Cartesian coordinates can be cumbersome. Another method for representing points in the plane is to use <strong>polar coordinates</strong>. In this new scheme we represent a point <span class="math inline">\(p \in \mathbb{R}^{2}\)</span> by a <strong>radial distance</strong> denoted by <span class="nbr"><span class="math inline">\(r\)</span>,</span> namely the length of the straight line segment connecting the origin to <span class="math inline">\(p\)</span> and a radial coordinate <span class="math inline">\(\theta\)</span> called the <strong>azimuth</strong>, that is the angle measured in a counter clockwise direction from the positive <span class="nbr"><span class="math inline">\(x\)</span>-axis,</span> see Figure <a href="vcs.html#fig:fig-polar">1.1</a>. To distinguish a polar representation <span class="math inline">\((r, \theta)\)</span> of a point <span class="math inline">\(p\)</span> from a Cartesian representation <span class="math inline">\((x, y)\)</span> of <span class="nbr"><span class="math inline">\(p\)</span>,</span> we prefix the ordered pair <span class="math inline">\((r, \theta)\)</span> by <span class="math inline">\(P\)</span>.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-polar"></span>
+<img src="Images/Chapter_1_2/tikz2pdf-1.png" alt="Illustration of a polar representation of a point $p$ in the plane $\mathbb{R}^{2}$." width="823" />
+<p class="caption">
+FIGURE 1.1: Illustration of a polar representation of a point <span class="math inline">\(p\)</span> in the plane <span class="math inline">\(\mathbb{R}^{2}\)</span>.
+</p>
+</div>
+<details>
+<summary>
+Show/hide image source code
+</summary>
+<div class="kodesh">
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="vcs.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">%%Image generated using LaTeX package tikz.%%</span></span>
+<span id="cb1-2"><a href="vcs.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb1-3"><a href="vcs.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb1-4"><a href="vcs.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb1-5"><a href="vcs.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb1-6"><a href="vcs.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb1-7"><a href="vcs.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb1-8"><a href="vcs.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb1-9"><a href="vcs.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-10"><a href="vcs.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb1-11"><a href="vcs.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb1-12"><a href="vcs.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-13"><a href="vcs.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [dashed] (0, 3) -- (4,3);</span>
+<span id="cb1-14"><a href="vcs.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [dashed] (4, 0) -- (4,3);</span>
+<span id="cb1-15"><a href="vcs.html#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [thick, Cerulean] (0, 0) -- (4,3);</span>
+<span id="cb1-16"><a href="vcs.html#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [dashed, Cerulean, &lt;-&gt;] (-0.15,0.2) -- (3.85,3.2);</span>
+<span id="cb1-17"><a href="vcs.html#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[Cerulean, fill=Cerulean] (4,3) circle(1.5pt);</span>
+<span id="cb1-18"><a href="vcs.html#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[Black, fill=Black] (0,0) circle(1.5pt);</span>
+<span id="cb1-19"><a href="vcs.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> at (4,-0.15) {<span class="ss">$x$</span>};</span>
+<span id="cb1-20"><a href="vcs.html#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> at (-0.15,3) {<span class="ss">$y$</span>};</span>
+<span id="cb1-21"><a href="vcs.html#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> at (-0.15,-0.15) {<span class="ss">$o$</span>};</span>
+<span id="cb1-22"><a href="vcs.html#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> [Cerulean] at (1.9,2) {<span class="ss">$r$</span>};</span>
+<span id="cb1-23"><a href="vcs.html#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> [Cerulean] at (0.9,0.3) {<span class="ss">$</span><span class="sc">\theta</span><span class="ss">$</span>};</span>
+<span id="cb1-24"><a href="vcs.html#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> at (5.3,3.2) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(r, </span><span class="sc">\theta</span><span class="ss">)} = (x, y)$</span>};</span>
+<span id="cb1-25"><a href="vcs.html#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[dashed, Cerulean, -&gt;] (1.35,0) arc (0:36:1.35);</span>
+<span id="cb1-26"><a href="vcs.html#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [thick, -&gt;] (-0.1, 0) -- (5,0);</span>
+<span id="cb1-27"><a href="vcs.html#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> [thick, -&gt;] (0, -0.1) -&gt; (0,4);</span>
+<span id="cb1-28"><a href="vcs.html#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-29"><a href="vcs.html#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb1-30"><a href="vcs.html#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+</div>
+</details>
+<div>
+However, unlike Cartesian coordinates, the polar representation of a point is not necessarily unique. For instance, take the Cartesian point <span class="nbr"><span class="math inline">\((3, 4)\)</span>.</span> This has a countable number of polar representations, for instance,
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  P(5, \arctan(3/4)) = P(5, \arctan(3/4) + 2 k \pi) = P(-5, \arctan(3/4) + (2 k+1) \pi)
+  \end{align*}\]</span>
+</div>
+<div>
+<p>for <span class="nbr"><span class="math inline">\(k \in \mathbb{Z}\)</span>.</span> Therefore, when a unique representation is needed for a given point besides the origin, it is usual to limit the radial distance <span class="math inline">\(r\)</span> to the positive real numbers and the azimuth to the interval <span class="nbr"><span class="math inline">\((-\pi, \pi]\)</span>.</span></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="symbolsandsets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functionsfoundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false,
+"fig_caption": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
