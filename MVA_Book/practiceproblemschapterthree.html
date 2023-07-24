@@ -107,7 +107,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -120,7 +120,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -622,66 +622,66 @@ FIGURE 3.8: Tree diagram for a function <span class="math inline">\(f\)</span> o
 Show/hide image source code
 </summary>
 <div class="kodesh">
-<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="practiceproblemschapterthree.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">%%Image generated using \LaTeX package *tikz*.%%</span></span>
-<span id="cb17-2"><a href="practiceproblemschapterthree.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
-<span id="cb17-3"><a href="practiceproblemschapterthree.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
-<span id="cb17-4"><a href="practiceproblemschapterthree.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
-<span id="cb17-5"><a href="practiceproblemschapterthree.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
-<span id="cb17-6"><a href="practiceproblemschapterthree.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
-<span id="cb17-7"><a href="practiceproblemschapterthree.html#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
-<span id="cb17-8"><a href="practiceproblemschapterthree.html#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
-<span id="cb17-9"><a href="practiceproblemschapterthree.html#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
-<span id="cb17-10"><a href="practiceproblemschapterthree.html#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{arrows,shapes,snakes,automata,backgrounds,petri}</span>
-<span id="cb17-11"><a href="practiceproblemschapterthree.html#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
-<span id="cb17-12"><a href="practiceproblemschapterthree.html#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb17-13"><a href="practiceproblemschapterthree.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb17-14"><a href="practiceproblemschapterthree.html#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
-<span id="cb17-15"><a href="practiceproblemschapterthree.html#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
-<span id="cb17-16"><a href="practiceproblemschapterthree.html#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb17-17"><a href="practiceproblemschapterthree.html#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 1}=[level distance=3.5cm, sibling distance=5cm]</span>
-<span id="cb17-18"><a href="practiceproblemschapterthree.html#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 2}=[level distance=3.5cm, sibling distance=1.5cm]</span>
-<span id="cb17-19"><a href="practiceproblemschapterthree.html#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb17-20"><a href="practiceproblemschapterthree.html#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[grow=right]</span>
-<span id="cb17-21"><a href="practiceproblemschapterthree.html#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> {<span class="ss">$f$</span>}</span>
-<span id="cb17-22"><a href="practiceproblemschapterthree.html#cb17-22" aria-hidden="true" tabindex="-1"></a>    child {</span>
-<span id="cb17-23"><a href="practiceproblemschapterthree.html#cb17-23" aria-hidden="true" tabindex="-1"></a>        node[Red] {<span class="ss">$y$</span>}        </span>
-<span id="cb17-24"><a href="practiceproblemschapterthree.html#cb17-24" aria-hidden="true" tabindex="-1"></a>           child {</span>
-<span id="cb17-25"><a href="practiceproblemschapterthree.html#cb17-25" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}v$</span>}] {}</span>
-<span id="cb17-26"><a href="practiceproblemschapterthree.html#cb17-26" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb17-27"><a href="practiceproblemschapterthree.html#cb17-27" aria-hidden="true" tabindex="-1"></a>                node[above] {}</span>
-<span id="cb17-28"><a href="practiceproblemschapterthree.html#cb17-28" aria-hidden="true" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> v}$</span>}</span>
-<span id="cb17-29"><a href="practiceproblemschapterthree.html#cb17-29" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb17-30"><a href="practiceproblemschapterthree.html#cb17-30" aria-hidden="true" tabindex="-1"></a>            child {</span>
-<span id="cb17-31"><a href="practiceproblemschapterthree.html#cb17-31" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}u$</span>}] {}</span>
-<span id="cb17-32"><a href="practiceproblemschapterthree.html#cb17-32" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb17-33"><a href="practiceproblemschapterthree.html#cb17-33" aria-hidden="true" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> u}$</span>}</span>
-<span id="cb17-34"><a href="practiceproblemschapterthree.html#cb17-34" aria-hidden="true" tabindex="-1"></a>                node[below]  {}</span>
-<span id="cb17-35"><a href="practiceproblemschapterthree.html#cb17-35" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb17-36"><a href="practiceproblemschapterthree.html#cb17-36" aria-hidden="true" tabindex="-1"></a>            edge from parent [Red]</span>
-<span id="cb17-37"><a href="practiceproblemschapterthree.html#cb17-37" aria-hidden="true" tabindex="-1"></a>            node[above] {}</span>
-<span id="cb17-38"><a href="practiceproblemschapterthree.html#cb17-38" aria-hidden="true" tabindex="-1"></a>            node[below=0.5em, left=0.25em, black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> y}$</span>}</span>
-<span id="cb17-39"><a href="practiceproblemschapterthree.html#cb17-39" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb17-40"><a href="practiceproblemschapterthree.html#cb17-40" aria-hidden="true" tabindex="-1"></a>    child {</span>
-<span id="cb17-41"><a href="practiceproblemschapterthree.html#cb17-41" aria-hidden="true" tabindex="-1"></a>        node[Red] {<span class="ss">$x$</span>}        </span>
-<span id="cb17-42"><a href="practiceproblemschapterthree.html#cb17-42" aria-hidden="true" tabindex="-1"></a>        child {</span>
-<span id="cb17-43"><a href="practiceproblemschapterthree.html#cb17-43" aria-hidden="true" tabindex="-1"></a>                node[label=right:{{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}v$</span>}}] {}</span>
-<span id="cb17-44"><a href="practiceproblemschapterthree.html#cb17-44" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb17-45"><a href="practiceproblemschapterthree.html#cb17-45" aria-hidden="true" tabindex="-1"></a>                node[above] {}</span>
-<span id="cb17-46"><a href="practiceproblemschapterthree.html#cb17-46" aria-hidden="true" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> v}$</span>}</span>
-<span id="cb17-47"><a href="practiceproblemschapterthree.html#cb17-47" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb17-48"><a href="practiceproblemschapterthree.html#cb17-48" aria-hidden="true" tabindex="-1"></a>            child {</span>
-<span id="cb17-49"><a href="practiceproblemschapterthree.html#cb17-49" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}u$</span>}] {}</span>
-<span id="cb17-50"><a href="practiceproblemschapterthree.html#cb17-50" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb17-51"><a href="practiceproblemschapterthree.html#cb17-51" aria-hidden="true" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> u}$</span>}</span>
-<span id="cb17-52"><a href="practiceproblemschapterthree.html#cb17-52" aria-hidden="true" tabindex="-1"></a>                node[below]  {}</span>
-<span id="cb17-53"><a href="practiceproblemschapterthree.html#cb17-53" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb17-54"><a href="practiceproblemschapterthree.html#cb17-54" aria-hidden="true" tabindex="-1"></a>        edge from parent [Red]      </span>
-<span id="cb17-55"><a href="practiceproblemschapterthree.html#cb17-55" aria-hidden="true" tabindex="-1"></a>            node[above=0.5em, left= 0.25em, black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> x}$</span>}</span>
-<span id="cb17-56"><a href="practiceproblemschapterthree.html#cb17-56" aria-hidden="true" tabindex="-1"></a>            node[below]  {}</span>
-<span id="cb17-57"><a href="practiceproblemschapterthree.html#cb17-57" aria-hidden="true" tabindex="-1"></a>    };</span>
-<span id="cb17-58"><a href="practiceproblemschapterthree.html#cb17-58" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
-<span id="cb17-59"><a href="practiceproblemschapterthree.html#cb17-59" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
-<span id="cb17-60"><a href="practiceproblemschapterthree.html#cb17-60" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="practiceproblemschapterthree.html#cb17-1" tabindex="-1"></a><span class="co">%%Image generated using \LaTeX package *tikz*.%%</span></span>
+<span id="cb17-2"><a href="practiceproblemschapterthree.html#cb17-2" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb17-3"><a href="practiceproblemschapterthree.html#cb17-3" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb17-4"><a href="practiceproblemschapterthree.html#cb17-4" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb17-5"><a href="practiceproblemschapterthree.html#cb17-5" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb17-6"><a href="practiceproblemschapterthree.html#cb17-6" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb17-7"><a href="practiceproblemschapterthree.html#cb17-7" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb17-8"><a href="practiceproblemschapterthree.html#cb17-8" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb17-9"><a href="practiceproblemschapterthree.html#cb17-9" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb17-10"><a href="practiceproblemschapterthree.html#cb17-10" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{arrows,shapes,snakes,automata,backgrounds,petri}</span>
+<span id="cb17-11"><a href="practiceproblemschapterthree.html#cb17-11" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb17-12"><a href="practiceproblemschapterthree.html#cb17-12" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb17-13"><a href="practiceproblemschapterthree.html#cb17-13" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb17-14"><a href="practiceproblemschapterthree.html#cb17-14" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb17-15"><a href="practiceproblemschapterthree.html#cb17-15" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb17-16"><a href="practiceproblemschapterthree.html#cb17-16" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb17-17"><a href="practiceproblemschapterthree.html#cb17-17" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 1}=[level distance=3.5cm, sibling distance=5cm]</span>
+<span id="cb17-18"><a href="practiceproblemschapterthree.html#cb17-18" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 2}=[level distance=3.5cm, sibling distance=1.5cm]</span>
+<span id="cb17-19"><a href="practiceproblemschapterthree.html#cb17-19" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb17-20"><a href="practiceproblemschapterthree.html#cb17-20" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[grow=right]</span>
+<span id="cb17-21"><a href="practiceproblemschapterthree.html#cb17-21" tabindex="-1"></a><span class="fu">\node</span> {<span class="ss">$f$</span>}</span>
+<span id="cb17-22"><a href="practiceproblemschapterthree.html#cb17-22" tabindex="-1"></a>    child {</span>
+<span id="cb17-23"><a href="practiceproblemschapterthree.html#cb17-23" tabindex="-1"></a>        node[Red] {<span class="ss">$y$</span>}        </span>
+<span id="cb17-24"><a href="practiceproblemschapterthree.html#cb17-24" tabindex="-1"></a>           child {</span>
+<span id="cb17-25"><a href="practiceproblemschapterthree.html#cb17-25" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}v$</span>}] {}</span>
+<span id="cb17-26"><a href="practiceproblemschapterthree.html#cb17-26" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb17-27"><a href="practiceproblemschapterthree.html#cb17-27" tabindex="-1"></a>                node[above] {}</span>
+<span id="cb17-28"><a href="practiceproblemschapterthree.html#cb17-28" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> v}$</span>}</span>
+<span id="cb17-29"><a href="practiceproblemschapterthree.html#cb17-29" tabindex="-1"></a>            }</span>
+<span id="cb17-30"><a href="practiceproblemschapterthree.html#cb17-30" tabindex="-1"></a>            child {</span>
+<span id="cb17-31"><a href="practiceproblemschapterthree.html#cb17-31" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}u$</span>}] {}</span>
+<span id="cb17-32"><a href="practiceproblemschapterthree.html#cb17-32" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb17-33"><a href="practiceproblemschapterthree.html#cb17-33" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> u}$</span>}</span>
+<span id="cb17-34"><a href="practiceproblemschapterthree.html#cb17-34" tabindex="-1"></a>                node[below]  {}</span>
+<span id="cb17-35"><a href="practiceproblemschapterthree.html#cb17-35" tabindex="-1"></a>            }</span>
+<span id="cb17-36"><a href="practiceproblemschapterthree.html#cb17-36" tabindex="-1"></a>            edge from parent [Red]</span>
+<span id="cb17-37"><a href="practiceproblemschapterthree.html#cb17-37" tabindex="-1"></a>            node[above] {}</span>
+<span id="cb17-38"><a href="practiceproblemschapterthree.html#cb17-38" tabindex="-1"></a>            node[below=0.5em, left=0.25em, black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> y}$</span>}</span>
+<span id="cb17-39"><a href="practiceproblemschapterthree.html#cb17-39" tabindex="-1"></a>    }</span>
+<span id="cb17-40"><a href="practiceproblemschapterthree.html#cb17-40" tabindex="-1"></a>    child {</span>
+<span id="cb17-41"><a href="practiceproblemschapterthree.html#cb17-41" tabindex="-1"></a>        node[Red] {<span class="ss">$x$</span>}        </span>
+<span id="cb17-42"><a href="practiceproblemschapterthree.html#cb17-42" tabindex="-1"></a>        child {</span>
+<span id="cb17-43"><a href="practiceproblemschapterthree.html#cb17-43" tabindex="-1"></a>                node[label=right:{{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}v$</span>}}] {}</span>
+<span id="cb17-44"><a href="practiceproblemschapterthree.html#cb17-44" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb17-45"><a href="practiceproblemschapterthree.html#cb17-45" tabindex="-1"></a>                node[above] {}</span>
+<span id="cb17-46"><a href="practiceproblemschapterthree.html#cb17-46" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> v}$</span>}</span>
+<span id="cb17-47"><a href="practiceproblemschapterthree.html#cb17-47" tabindex="-1"></a>            }</span>
+<span id="cb17-48"><a href="practiceproblemschapterthree.html#cb17-48" tabindex="-1"></a>            child {</span>
+<span id="cb17-49"><a href="practiceproblemschapterthree.html#cb17-49" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}u$</span>}] {}</span>
+<span id="cb17-50"><a href="practiceproblemschapterthree.html#cb17-50" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb17-51"><a href="practiceproblemschapterthree.html#cb17-51" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> u}$</span>}</span>
+<span id="cb17-52"><a href="practiceproblemschapterthree.html#cb17-52" tabindex="-1"></a>                node[below]  {}</span>
+<span id="cb17-53"><a href="practiceproblemschapterthree.html#cb17-53" tabindex="-1"></a>            }</span>
+<span id="cb17-54"><a href="practiceproblemschapterthree.html#cb17-54" tabindex="-1"></a>        edge from parent [Red]      </span>
+<span id="cb17-55"><a href="practiceproblemschapterthree.html#cb17-55" tabindex="-1"></a>            node[above=0.5em, left= 0.25em, black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> x}$</span>}</span>
+<span id="cb17-56"><a href="practiceproblemschapterthree.html#cb17-56" tabindex="-1"></a>            node[below]  {}</span>
+<span id="cb17-57"><a href="practiceproblemschapterthree.html#cb17-57" tabindex="-1"></a>    };</span>
+<span id="cb17-58"><a href="practiceproblemschapterthree.html#cb17-58" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb17-59"><a href="practiceproblemschapterthree.html#cb17-59" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb17-60"><a href="practiceproblemschapterthree.html#cb17-60" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 </div>
 </details>
 To find the derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(u\)</span> we consider all pairs of branches that lead from <span class="math inline">\(f\)</span> to <span class="nbr"><span class="math inline">\(u\)</span>.</span> Here there are two possibilities:
@@ -959,66 +959,66 @@ FIGURE 3.9: Tree diagram for <span class="math inline">\(f\)</span> a function o
 Show/hide image source code
 </summary>
 <div class="kodesh">
-<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="practiceproblemschapterthree.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">%%Image generated using \LaTeX package *tikz*.%%</span></span>
-<span id="cb18-2"><a href="practiceproblemschapterthree.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
-<span id="cb18-3"><a href="practiceproblemschapterthree.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
-<span id="cb18-4"><a href="practiceproblemschapterthree.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
-<span id="cb18-5"><a href="practiceproblemschapterthree.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
-<span id="cb18-6"><a href="practiceproblemschapterthree.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
-<span id="cb18-7"><a href="practiceproblemschapterthree.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
-<span id="cb18-8"><a href="practiceproblemschapterthree.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
-<span id="cb18-9"><a href="practiceproblemschapterthree.html#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
-<span id="cb18-10"><a href="practiceproblemschapterthree.html#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{arrows,shapes,snakes,automata,backgrounds,petri}</span>
-<span id="cb18-11"><a href="practiceproblemschapterthree.html#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
-<span id="cb18-12"><a href="practiceproblemschapterthree.html#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb18-13"><a href="practiceproblemschapterthree.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb18-14"><a href="practiceproblemschapterthree.html#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
-<span id="cb18-15"><a href="practiceproblemschapterthree.html#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
-<span id="cb18-16"><a href="practiceproblemschapterthree.html#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb18-17"><a href="practiceproblemschapterthree.html#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 1}=[level distance=3.5cm, sibling distance=5cm]</span>
-<span id="cb18-18"><a href="practiceproblemschapterthree.html#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 2}=[level distance=3.5cm, sibling distance=1.5cm]</span>
-<span id="cb18-19"><a href="practiceproblemschapterthree.html#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb18-20"><a href="practiceproblemschapterthree.html#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[grow=right]</span>
-<span id="cb18-21"><a href="practiceproblemschapterthree.html#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\node</span> {<span class="ss">$f$</span>}</span>
-<span id="cb18-22"><a href="practiceproblemschapterthree.html#cb18-22" aria-hidden="true" tabindex="-1"></a>    child {</span>
-<span id="cb18-23"><a href="practiceproblemschapterthree.html#cb18-23" aria-hidden="true" tabindex="-1"></a>        node[Red] {<span class="ss">$y$</span>}        </span>
-<span id="cb18-24"><a href="practiceproblemschapterthree.html#cb18-24" aria-hidden="true" tabindex="-1"></a>           child {</span>
-<span id="cb18-25"><a href="practiceproblemschapterthree.html#cb18-25" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}</span><span class="sc">\theta</span><span class="ss">$</span>}] {}</span>
-<span id="cb18-26"><a href="practiceproblemschapterthree.html#cb18-26" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb18-27"><a href="practiceproblemschapterthree.html#cb18-27" aria-hidden="true" tabindex="-1"></a>                node[above] {}</span>
-<span id="cb18-28"><a href="practiceproblemschapterthree.html#cb18-28" aria-hidden="true" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\theta</span><span class="ss">}$</span>}</span>
-<span id="cb18-29"><a href="practiceproblemschapterthree.html#cb18-29" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb18-30"><a href="practiceproblemschapterthree.html#cb18-30" aria-hidden="true" tabindex="-1"></a>            child {</span>
-<span id="cb18-31"><a href="practiceproblemschapterthree.html#cb18-31" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}r$</span>}] {}</span>
-<span id="cb18-32"><a href="practiceproblemschapterthree.html#cb18-32" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb18-33"><a href="practiceproblemschapterthree.html#cb18-33" aria-hidden="true" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> r}$</span>}</span>
-<span id="cb18-34"><a href="practiceproblemschapterthree.html#cb18-34" aria-hidden="true" tabindex="-1"></a>                node[below]  {}</span>
-<span id="cb18-35"><a href="practiceproblemschapterthree.html#cb18-35" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb18-36"><a href="practiceproblemschapterthree.html#cb18-36" aria-hidden="true" tabindex="-1"></a>            edge from parent [Red]</span>
-<span id="cb18-37"><a href="practiceproblemschapterthree.html#cb18-37" aria-hidden="true" tabindex="-1"></a>            node[above] {}</span>
-<span id="cb18-38"><a href="practiceproblemschapterthree.html#cb18-38" aria-hidden="true" tabindex="-1"></a>            node[below=0.5em, left=0.25em, black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> y}$</span>}</span>
-<span id="cb18-39"><a href="practiceproblemschapterthree.html#cb18-39" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb18-40"><a href="practiceproblemschapterthree.html#cb18-40" aria-hidden="true" tabindex="-1"></a>    child {</span>
-<span id="cb18-41"><a href="practiceproblemschapterthree.html#cb18-41" aria-hidden="true" tabindex="-1"></a>        node[Red] {<span class="ss">$x$</span>}        </span>
-<span id="cb18-42"><a href="practiceproblemschapterthree.html#cb18-42" aria-hidden="true" tabindex="-1"></a>        child {</span>
-<span id="cb18-43"><a href="practiceproblemschapterthree.html#cb18-43" aria-hidden="true" tabindex="-1"></a>                node[label=right:{{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}</span><span class="sc">\theta</span><span class="ss">$</span>}}] {}</span>
-<span id="cb18-44"><a href="practiceproblemschapterthree.html#cb18-44" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb18-45"><a href="practiceproblemschapterthree.html#cb18-45" aria-hidden="true" tabindex="-1"></a>                node[above] {}</span>
-<span id="cb18-46"><a href="practiceproblemschapterthree.html#cb18-46" aria-hidden="true" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\theta</span><span class="ss">}$</span>}</span>
-<span id="cb18-47"><a href="practiceproblemschapterthree.html#cb18-47" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb18-48"><a href="practiceproblemschapterthree.html#cb18-48" aria-hidden="true" tabindex="-1"></a>            child {</span>
-<span id="cb18-49"><a href="practiceproblemschapterthree.html#cb18-49" aria-hidden="true" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}r$</span>}] {}</span>
-<span id="cb18-50"><a href="practiceproblemschapterthree.html#cb18-50" aria-hidden="true" tabindex="-1"></a>                edge from parent [Cerulean]</span>
-<span id="cb18-51"><a href="practiceproblemschapterthree.html#cb18-51" aria-hidden="true" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> r}$</span>}</span>
-<span id="cb18-52"><a href="practiceproblemschapterthree.html#cb18-52" aria-hidden="true" tabindex="-1"></a>                node[below]  {}</span>
-<span id="cb18-53"><a href="practiceproblemschapterthree.html#cb18-53" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb18-54"><a href="practiceproblemschapterthree.html#cb18-54" aria-hidden="true" tabindex="-1"></a>        edge from parent [Red]      </span>
-<span id="cb18-55"><a href="practiceproblemschapterthree.html#cb18-55" aria-hidden="true" tabindex="-1"></a>            node[above=0.5em, left= 0.25em, black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> x}$</span>}</span>
-<span id="cb18-56"><a href="practiceproblemschapterthree.html#cb18-56" aria-hidden="true" tabindex="-1"></a>            node[below]  {}</span>
-<span id="cb18-57"><a href="practiceproblemschapterthree.html#cb18-57" aria-hidden="true" tabindex="-1"></a>    };</span>
-<span id="cb18-58"><a href="practiceproblemschapterthree.html#cb18-58" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
-<span id="cb18-59"><a href="practiceproblemschapterthree.html#cb18-59" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
-<span id="cb18-60"><a href="practiceproblemschapterthree.html#cb18-60" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="practiceproblemschapterthree.html#cb18-1" tabindex="-1"></a><span class="co">%%Image generated using \LaTeX package *tikz*.%%</span></span>
+<span id="cb18-2"><a href="practiceproblemschapterthree.html#cb18-2" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb18-3"><a href="practiceproblemschapterthree.html#cb18-3" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb18-4"><a href="practiceproblemschapterthree.html#cb18-4" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb18-5"><a href="practiceproblemschapterthree.html#cb18-5" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb18-6"><a href="practiceproblemschapterthree.html#cb18-6" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb18-7"><a href="practiceproblemschapterthree.html#cb18-7" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb18-8"><a href="practiceproblemschapterthree.html#cb18-8" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb18-9"><a href="practiceproblemschapterthree.html#cb18-9" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb18-10"><a href="practiceproblemschapterthree.html#cb18-10" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{arrows,shapes,snakes,automata,backgrounds,petri}</span>
+<span id="cb18-11"><a href="practiceproblemschapterthree.html#cb18-11" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb18-12"><a href="practiceproblemschapterthree.html#cb18-12" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb18-13"><a href="practiceproblemschapterthree.html#cb18-13" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb18-14"><a href="practiceproblemschapterthree.html#cb18-14" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb18-15"><a href="practiceproblemschapterthree.html#cb18-15" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb18-16"><a href="practiceproblemschapterthree.html#cb18-16" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb18-17"><a href="practiceproblemschapterthree.html#cb18-17" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 1}=[level distance=3.5cm, sibling distance=5cm]</span>
+<span id="cb18-18"><a href="practiceproblemschapterthree.html#cb18-18" tabindex="-1"></a><span class="fu">\tikzstyle</span>{level 2}=[level distance=3.5cm, sibling distance=1.5cm]</span>
+<span id="cb18-19"><a href="practiceproblemschapterthree.html#cb18-19" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb18-20"><a href="practiceproblemschapterthree.html#cb18-20" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[grow=right]</span>
+<span id="cb18-21"><a href="practiceproblemschapterthree.html#cb18-21" tabindex="-1"></a><span class="fu">\node</span> {<span class="ss">$f$</span>}</span>
+<span id="cb18-22"><a href="practiceproblemschapterthree.html#cb18-22" tabindex="-1"></a>    child {</span>
+<span id="cb18-23"><a href="practiceproblemschapterthree.html#cb18-23" tabindex="-1"></a>        node[Red] {<span class="ss">$y$</span>}        </span>
+<span id="cb18-24"><a href="practiceproblemschapterthree.html#cb18-24" tabindex="-1"></a>           child {</span>
+<span id="cb18-25"><a href="practiceproblemschapterthree.html#cb18-25" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}</span><span class="sc">\theta</span><span class="ss">$</span>}] {}</span>
+<span id="cb18-26"><a href="practiceproblemschapterthree.html#cb18-26" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb18-27"><a href="practiceproblemschapterthree.html#cb18-27" tabindex="-1"></a>                node[above] {}</span>
+<span id="cb18-28"><a href="practiceproblemschapterthree.html#cb18-28" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\theta</span><span class="ss">}$</span>}</span>
+<span id="cb18-29"><a href="practiceproblemschapterthree.html#cb18-29" tabindex="-1"></a>            }</span>
+<span id="cb18-30"><a href="practiceproblemschapterthree.html#cb18-30" tabindex="-1"></a>            child {</span>
+<span id="cb18-31"><a href="practiceproblemschapterthree.html#cb18-31" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}r$</span>}] {}</span>
+<span id="cb18-32"><a href="practiceproblemschapterthree.html#cb18-32" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb18-33"><a href="practiceproblemschapterthree.html#cb18-33" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> y}{</span><span class="sc">\partial</span><span class="ss"> r}$</span>}</span>
+<span id="cb18-34"><a href="practiceproblemschapterthree.html#cb18-34" tabindex="-1"></a>                node[below]  {}</span>
+<span id="cb18-35"><a href="practiceproblemschapterthree.html#cb18-35" tabindex="-1"></a>            }</span>
+<span id="cb18-36"><a href="practiceproblemschapterthree.html#cb18-36" tabindex="-1"></a>            edge from parent [Red]</span>
+<span id="cb18-37"><a href="practiceproblemschapterthree.html#cb18-37" tabindex="-1"></a>            node[above] {}</span>
+<span id="cb18-38"><a href="practiceproblemschapterthree.html#cb18-38" tabindex="-1"></a>            node[below=0.5em, left=0.25em, black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> y}$</span>}</span>
+<span id="cb18-39"><a href="practiceproblemschapterthree.html#cb18-39" tabindex="-1"></a>    }</span>
+<span id="cb18-40"><a href="practiceproblemschapterthree.html#cb18-40" tabindex="-1"></a>    child {</span>
+<span id="cb18-41"><a href="practiceproblemschapterthree.html#cb18-41" tabindex="-1"></a>        node[Red] {<span class="ss">$x$</span>}        </span>
+<span id="cb18-42"><a href="practiceproblemschapterthree.html#cb18-42" tabindex="-1"></a>        child {</span>
+<span id="cb18-43"><a href="practiceproblemschapterthree.html#cb18-43" tabindex="-1"></a>                node[label=right:{{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}</span><span class="sc">\theta</span><span class="ss">$</span>}}] {}</span>
+<span id="cb18-44"><a href="practiceproblemschapterthree.html#cb18-44" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb18-45"><a href="practiceproblemschapterthree.html#cb18-45" tabindex="-1"></a>                node[above] {}</span>
+<span id="cb18-46"><a href="practiceproblemschapterthree.html#cb18-46" tabindex="-1"></a>                node[below=1.375em,right=0.1em,black]  {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> </span><span class="sc">\theta</span><span class="ss">}$</span>}</span>
+<span id="cb18-47"><a href="practiceproblemschapterthree.html#cb18-47" tabindex="-1"></a>            }</span>
+<span id="cb18-48"><a href="practiceproblemschapterthree.html#cb18-48" tabindex="-1"></a>            child {</span>
+<span id="cb18-49"><a href="practiceproblemschapterthree.html#cb18-49" tabindex="-1"></a>                node[label=right:{<span class="ss">$</span><span class="sc">\color</span><span class="ss">{Cerulean}r$</span>}] {}</span>
+<span id="cb18-50"><a href="practiceproblemschapterthree.html#cb18-50" tabindex="-1"></a>                edge from parent [Cerulean]</span>
+<span id="cb18-51"><a href="practiceproblemschapterthree.html#cb18-51" tabindex="-1"></a>                node[above=1.375em,right=0.1em,black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> x}{</span><span class="sc">\partial</span><span class="ss"> r}$</span>}</span>
+<span id="cb18-52"><a href="practiceproblemschapterthree.html#cb18-52" tabindex="-1"></a>                node[below]  {}</span>
+<span id="cb18-53"><a href="practiceproblemschapterthree.html#cb18-53" tabindex="-1"></a>            }</span>
+<span id="cb18-54"><a href="practiceproblemschapterthree.html#cb18-54" tabindex="-1"></a>        edge from parent [Red]      </span>
+<span id="cb18-55"><a href="practiceproblemschapterthree.html#cb18-55" tabindex="-1"></a>            node[above=0.5em, left= 0.25em, black] {<span class="ss">$</span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss"> f}{</span><span class="sc">\partial</span><span class="ss"> x}$</span>}</span>
+<span id="cb18-56"><a href="practiceproblemschapterthree.html#cb18-56" tabindex="-1"></a>            node[below]  {}</span>
+<span id="cb18-57"><a href="practiceproblemschapterthree.html#cb18-57" tabindex="-1"></a>    };</span>
+<span id="cb18-58"><a href="practiceproblemschapterthree.html#cb18-58" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb18-59"><a href="practiceproblemschapterthree.html#cb18-59" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb18-60"><a href="practiceproblemschapterthree.html#cb18-60" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 </div>
 </details>
 </div>
@@ -1101,7 +1101,7 @@ we have that
   =&amp;\frac{\partial}{\partial x}g(x(r,\theta),y(r,\theta))\\[0.5em]
   =&amp; \left(\cos(\theta)\frac{\partial}{\partial r} - \frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta} \right) \left(\cos(\theta) \frac{\partial}{\partial r} - \frac{\sin(\theta)}{r}\frac{\partial }{\partial \theta} \right)f(x(r,\theta),y(r,\theta))\\[0.5em]
     =&amp; \cos(\theta)\frac{\partial}{\partial r} \left(\cos(\theta)\frac{\partial }{\partial r}f(x(r,\theta),y(r,\theta)) \right)+\cos(\theta)\frac{\partial}{\partial r} \left(-\frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta}f(x(r,\theta),y(r,\theta)) \right)\\[0.5em]
-&amp;-\frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta} \left(\cos(\theta)\frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta)) \right) - \frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta} \left(-\frac{\sin(\theta)}{r} \frac{\partial}{\partial \theta}f(x(r,\theta)) \right)
+&amp;-\frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta} \left(\cos(\theta)\frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta)) \right) - \frac{\sin(\theta)}{r}\frac{\partial}{\partial \theta} \left(-\frac{\sin(\theta)}{r} \frac{\partial}{\partial \theta}f(x(r,\theta),y(r,\theta)) \right)
     \end{align*}\]</span>
 </div>
 <div>
@@ -1109,8 +1109,8 @@ which, given our assumptions, reduces to
 </div>
 <div class="aligncontainer">
 <span class="math display">\[\begin{align*}
-\cos^{2}(\theta) \frac{\partial^2}{\partial r^2}f(x(r,\theta)) &amp;+ \frac{\sin^{2}(\theta)}{r^2}\frac{\partial^2}{\partial\theta^2}f(x(r,\theta))-\frac{2\sin(\theta)\cos(\theta)}r\frac{\partial^2}{\partial r\partial\theta}f(x(r,\theta))\\[0.5em]
-    &amp;+\frac{\sin^{2}(\theta)}r\frac{\partial}{\partial r}f(x(r,\theta)) + \frac{2\sin(\theta)\cos(\theta)}{r^2}\frac{\partial}{\partial \theta}f(x(r,\theta)).
+\cos^{2}(\theta) \frac{\partial^2}{\partial r^2}f(x(r,\theta),y(r,\theta)) &amp;+ \frac{\sin^{2}(\theta)}{r^2}\frac{\partial^2}{\partial\theta^2}f(x(r,\theta),y(r,\theta))-\frac{2\sin(\theta)\cos(\theta)}r\frac{\partial^2}{\partial r\partial\theta}f(x(r,\theta),y(r,\theta))\\[0.5em]
+    &amp;+\frac{\sin^{2}(\theta)}r\frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta)) + \frac{2\sin(\theta)\cos(\theta)}{r^2}\frac{\partial}{\partial \theta}f(x(r,\theta),y(r,\theta)).
     \end{align*}\]</span>
 </div>
 </div>
@@ -1139,7 +1139,7 @@ Since, <span class="nbr"><span class="math inline">\(\sec^{2}(\theta(x,y)) = 1 +
 </div>
 <div class="aligncontainer">
 <span class="math display">\[\begin{align*}
-\frac{\partial}{\partial y}theta(x,y) = \frac{x}{x^{2}+y^{2}} = \frac{\cos(\theta(x,y)}{r(x,y)}.
+\frac{\partial}{\partial y}\theta(x,y) = \frac{x}{x^{2}+y^{2}} = \frac{\cos(\theta(x,y)}{r(x,y)}.
 \end{align*}\]</span>
 </div>
 <div>
@@ -1181,9 +1181,9 @@ we have that
   &amp;+ \frac{\sin(\theta)\cos(\theta)}{r} \frac{\partial^{2}}{\partial r \partial \theta}f(x(r,\theta),y(r,\theta)) + \frac{\cos^{2}(\theta)}{r} \frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta))\\[0.5em]
   &amp;+ \frac{\cos(\theta)\sin(\theta)}{r}\frac{\partial^{2}}{\partial \theta \partial r}f(x(r,\theta),y(r,\theta)) - \frac{\cos(\theta)\sin(\theta)}{r^{2}}\frac{\partial}{\partial\theta}f(x(r,\theta),y(r,\theta))\\[0.5em]
   &amp;+ \frac{\cos^2(\theta)}{r^{2}} \frac{\partial^{2}}{\partial \theta^{2}}f(x(r,\theta),y(r,\theta))\\[0.5em]
-    =&amp; \sin^{2}(\theta) \frac{\partial^{2}}{\partial r^{2}}f(x(r,\theta),y(r,\theta) + \frac{\cos^{2}(\theta)}{r^{2}} \frac{\partial^{2}}{\partial \theta^{2}}f(x(r,\theta),y(r,\theta)\\[0.5em]
-  &amp;+ \frac{2\cos(\theta)\sin(\theta)}{r} \frac{\partial^{2}}{\partial r \partial\theta}f(x(r,\theta),y(r,\theta) + \frac{\cos^{2}(\theta)}{r} \frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta)\\[0.5em]
-  &amp;- \frac{2\cos(\theta)\sin(\theta)}{r^{2}}\frac{\partial}{\partial \theta}f(x(r,\theta),y(r,\theta).
+    =&amp; \sin^{2}(\theta) \frac{\partial^{2}}{\partial r^{2}}f(x(r,\theta),y(r,\theta)) + \frac{\cos^{2}(\theta)}{r^{2}} \frac{\partial^{2}}{\partial \theta^{2}}f(x(r,\theta),y(r,\theta))\\[0.5em]
+  &amp;+ \frac{2\cos(\theta)\sin(\theta)}{r} \frac{\partial^{2}}{\partial r \partial\theta}f(x(r,\theta),y(r,\theta)) + \frac{\cos^{2}(\theta)}{r} \frac{\partial}{\partial r}f(x(r,\theta),y(r,\theta)\\[0.5em]
+  &amp;- \frac{2\cos(\theta)\sin(\theta)}{r^{2}}\frac{\partial}{\partial \theta}f(x(r,\theta),y(r,\theta)).
 \end{align*}\]</span>
 </div>
 </div>
