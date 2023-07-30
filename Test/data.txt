@@ -1,0 +1,5 @@
+This is the first sentence.
+Welcome to the website.
+Have a great day!
+Randomly selected sentence.
+Refresh to see a new sentence.
