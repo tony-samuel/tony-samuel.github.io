@@ -31,10 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
           '<q><i>We are so accustomed to disguise ourselves to others that in the end we become disguised to ourselves.</i></q> <b><nobr>&ndash; François</nobr> de la Rochefoucauld</b>',
           '<q><i>Whoever undertakes to set himself up as judge in the field of truth and knowledge is shipwrecked by the laughter of the gods.</i></q> <b><nobr>&ndash; Albert</nobr> Einstein</b>',
           '<q><i>In a time of universal deceit, telling the truth is a revolutionary act.</i></q> <b><nobr>&ndash; George</nobr> Orwell</b>',
-          '<q><i>It has been said, ‘time heals all wounds.’  I do not agree.  The wounds remain.  In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens.  But it is never gone.</i></q> <b><nobr>&ndash; Rose</nobr> Kennedy</b>',
-          //'<q><i></i></q> <b><nobr>&ndash; </nobr></b>',
-          // Add more HTML options as needed
-      ];
+          //'<q><i>It has been said, ‘time heals all wounds.’  I do not agree.  The wounds remain.  In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens.  But it is never gone.</i></q> <b><nobr>&ndash; Rose</nobr> Kennedy</b>',
+          //'<q><i>Of all the animals, man is the only one that is cruel.  He is the only one that inflicts pain for the pleasure of doing it.</i></q> <b><nobr>&ndash; Mark</nobr> Twain</b>',
+          //'<q><i>Out of suffering have emerged the strongest souls; the most massive characters are seared with scars.</i></q> <b><nobr>&ndash; Kahlil</nobr> Gibran</b>',
+          //'<q><i>Man is least himself when he talks in his own person.  Give him a mask, and he will tell you the truth.</i></q> <b><nobr>&ndash; Oscar</nobr> Wilde</b>',
+          //'<q><i>The basis of shame is not some personal mistake of ours, but that this humiliation is seen by everyone.</i></q> <b><nobr>&ndash; Milan</nobr>Kundera</b>',
+          '<q><i>Although the world is full of suffering, it is full also of the overcoming of it.</i></q> <b><nobr>&ndash; Helen</nobr> Keller</b>',
+          '<q><i>It’s not so important who starts the game, but who finishes it.</i></q> <b><nobr>&ndash; John</nobr> Wooden</b>'
+          //'<q><i></i></q> <b><nobr>&ndash; </nobr></b>'
+        ];
 
       const randomIndex = Math.floor(Math.random() * htmlOptions.length);
       return htmlOptions[randomIndex];
