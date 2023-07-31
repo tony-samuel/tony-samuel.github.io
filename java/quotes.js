@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
           '<q><i>Whoever undertakes to set himself up as judge in the field of truth and knowledge is shipwrecked by the laughter of the gods.</i></q> &ndash; <b>Albert Einstein</b>',
           '<q><i>In a time of universal deceit, telling the truth is a revolutionary act.</i></q> &ndash; <b>George Orwell</b>',
           '<q><i>It has been said, ‘time heals all wounds.’  I do not agree.  The wounds remain.  In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens.  But it is never gone.</i></q> &ndash; <b>Rose Kennedy</b>',
-          '<q><i></i></q> &ndash; <b></b>',
+          //'<q><i></i></q> &ndash; <b></b>',
           // Add more HTML options as needed
       ];
 
