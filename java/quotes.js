@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
           //'<q><i>The bitterest tears shed over graves are for words left unsaid and deeds left undone.</i></q> <b>&ndash;&nbsp;Harriet Beecher Stowe</b>',
           '<q><i>What is food to one, is to others bitter poison.</i></q> <b>&ndash;&nbsp;Lucretius Carus</b>',
           '<q><i>Before you embark on a journey of revenge, dig two graves.</i></q> <b>&ndash;&nbsp;Kǒng Fūzǐ</b>',
-          '<q><i>What we do for ourselves dies with us.  What we do for others and the world remains and is immortal.</i> <b>&ndash;&nbsp;Albert Pine</b>',
+          '<q><i>What we do for ourselves dies with us.  What we do for others and the world remains and is immortal.</i></q> <b>&ndash;&nbsp;Albert Pine</b>',
           '<q><i>The individual has always had to struggle to keep from being overwhelmed by the tribe.</i> <b>&ndash;&nbsp;Friedrich Nietzsche</b>',
           //'<q><i>Murder is unique in that it abolishes the party it injures, so that society must take the place of the victim and on his behalf demand atonement or grant forgiveness.</i></q> <b>&ndash;&nbsp;Wystan Hugh Auden</b>',
           //'<q><i>Better to be violent if there’s violence in our hearts than to put on the cloak of non-violence to cover impotence.</i></q> <b>&ndash;&nbsp;Mahatma Gandhi</b>',
