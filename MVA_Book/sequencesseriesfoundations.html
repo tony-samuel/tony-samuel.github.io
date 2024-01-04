@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.8 Sequences and series | Multivariable and vector calculus</title>
+  <meta name="description" content="1.8 Sequences and series | Multivariable and vector calculus" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.8 Sequences and series | Multivariable and vector calculus" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.8 Sequences and series | Multivariable and vector calculus" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="parametriccurvesfoundations.html"/>
+<link rel="next" href="taylorandfourierseriesfoundations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.13.0/leaflet-providers_1.13.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.0/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/thmhighlight.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariable and vector calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Foundations (Prerequisites)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="symbolsandsets.html"><a href="symbolsandsets.html"><i class="fa fa-check"></i><b>1.1</b> Mathematical symbols and sets</a></li>
+<li class="chapter" data-level="1.2" data-path="vcs.html"><a href="vcs.html"><i class="fa fa-check"></i><b>1.2</b> Vectors and coordinate systems</a></li>
+<li class="chapter" data-level="1.3" data-path="functionsfoundations.html"><a href="functionsfoundations.html"><i class="fa fa-check"></i><b>1.3</b> Functions</a></li>
+<li class="chapter" data-level="1.4" data-path="differentiationfoundations.html"><a href="differentiationfoundations.html"><i class="fa fa-check"></i><b>1.4</b> Differentiation</a></li>
+<li class="chapter" data-level="1.5" data-path="critical_points_foundations.html"><a href="critical_points_foundations.html"><i class="fa fa-check"></i><b>1.5</b> Critical points</a></li>
+<li class="chapter" data-level="1.6" data-path="integrationfoundations.html"><a href="integrationfoundations.html"><i class="fa fa-check"></i><b>1.6</b> Integration</a></li>
+<li class="chapter" data-level="1.7" data-path="parametriccurvesfoundations.html"><a href="parametriccurvesfoundations.html"><i class="fa fa-check"></i><b>1.7</b> Parametric curves</a></li>
+<li class="chapter" data-level="1.8" data-path="sequencesseriesfoundations.html"><a href="sequencesseriesfoundations.html"><i class="fa fa-check"></i><b>1.8</b> Sequences and series</a></li>
+<li class="chapter" data-level="1.9" data-path="taylorandfourierseriesfoundations.html"><a href="taylorandfourierseriesfoundations.html"><i class="fa fa-check"></i><b>1.9</b> Taylor and Fourier series</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschapterone.html"><a href="practiceproblemschapterone.html"><i class="fa fa-check"></i>Practice problems - Chapter 1</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions-of-several-variables.html"><a href="functions-of-several-variables.html"><i class="fa fa-check"></i><b>2</b> Functions of several variables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="limitsparttwoFSV.html"><a href="limitsparttwoFSV.html"><i class="fa fa-check"></i><b>2.1</b> Limits (part II)</a></li>
+<li class="chapter" data-level="2.2" data-path="continuityparttwoFSV.html"><a href="continuityparttwoFSV.html"><i class="fa fa-check"></i><b>2.2</b> Continuity (part II)</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschaptertwo.html"><a href="practiceproblemschaptertwo.html"><i class="fa fa-check"></i>Practice problems – Chapter 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="partialderivatives.html"><a href="partialderivatives.html"><i class="fa fa-check"></i><b>3</b> Partial derivatives</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="pd.html"><a href="pd.html"><i class="fa fa-check"></i><b>3.1</b> Partial derivatives</a></li>
+<li class="chapter" data-level="3.2" data-path="thechainrule.html"><a href="thechainrule.html"><i class="fa fa-check"></i><b>3.2</b> The chain rule</a></li>
+<li class="chapter" data-level="3.3" data-path="implicitdifferentiation.html"><a href="implicitdifferentiation.html"><i class="fa fa-check"></i><b>3.3</b> Implicit differentiation</a></li>
+<li class="chapter" data-level="3.4" data-path="pde.html"><a href="pde.html"><i class="fa fa-check"></i><b>3.4</b> Partial differential equations</a></li>
+<li class="chapter" data-level="3.5" data-path="directionalderivative.html"><a href="directionalderivative.html"><i class="fa fa-check"></i><b>3.5</b> Directional derivative</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschapterthree.html"><a href="practiceproblemschapterthree.html"><i class="fa fa-check"></i>Practice problems – Chapter 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multivariable and vector calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sequencesseriesfoundations" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Sequences and series<a href="sequencesseriesfoundations.html#sequencesseriesfoundations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sequencesfoundations" class="section level3 unnumbered unlisted hasAnchor">
+<h3>Sequences<a href="sequencesseriesfoundations.html#sequencesfoundations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div>
+Sequences are fundamental to the study of infinite series and many applications of mathematics. A <strong>sequence</strong> is an enumerated collection of objects in which repetitions are allowed and where order is important. Like a set, it contains members (also called <strong>elements</strong>, or <strong>terms</strong>). We will often denote a sequence of by
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  (a_{1}, a_{2}, a_{3}, \dots ) \quad \text{or} \quad (a_{n})_{n = 1}^{\infty}.
+  \end{align*}\]</span>
+</div>
+<div>
+An important property of a sequence is if it converges or diverges.
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 1.13  (convergent and divergent sequences) </strong></span></p>
+<div class="insatz">
+A sequence <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> or real numbers is said to <strong>converge</strong> to <span class="math inline">\(L \in \mathbb{R}\)</span> if for every positive number <span class="math inline">\(\epsilon\)</span> there exists a corresponding integer <span class="math inline">\(M\)</span> such that <span class="math inline">\(\lvert a_{n} - L \rvert &lt; \epsilon\)</span> for all <span class="nbr"><span class="math inline">\(n \geq M\)</span>.</span> If no such number <span class="math inline">\(L\)</span> exists, then we say that the sequence <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> is <strong>divergent</strong>. If the infinite sequence <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> converges to <span class="nbr"><span class="math inline">\(L\)</span>,</span> then we call <span class="math inline">\(L\)</span> the <strong>limit</strong> of the sequence and write <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} a_{n} = L\)</span>.</span>
+</div>
+</div>
+</div>
+<div>
+<p>One important fact to remember is that if an infinite sequence is convergent, the value of its limit is unique. Further, sums, differences and products of convergent sequences are again convergent sequences. Formally, if <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> and <span class="math inline">\((b_{n})_{n = 1}^{\infty}\)</span> denote two convergent sequences with respective limits <span class="math inline">\(\alpha\)</span> and <span class="nbr"><span class="math inline">\(\beta\)</span>,</span> then</p>
+</div>
+<div class="no_break_list">
+<ul>
+<li><p><span class="math inline">\(\displaystyle \lim_{n \to \infty} (a_{n} + b_{n}) = \left( \lim_{n \to \infty} a_{n} \right) + \left( \lim_{n \to \infty} b_{n} \right) = \alpha + \beta\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{n \to \infty} (a_{n} - b_{n}) = \left( \lim_{n \to \infty} a_{n} \right) - \left( \lim_{n \to \infty} b_{n} \right) = \alpha - \beta\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{n \to \infty} a_{n} b_{n} = \left( \lim_{n \to \infty} a_{n} \right) \left( \lim_{n \to \infty} b_{n} \right) = \alpha \beta\)</span>.</p></li>
+</ul>
+</div>
+<div>
+Examples of convergent sequences include
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  (1/n)_{n=1}^{\infty}, \quad (\sin(1/n))_{n=1}^{\infty} \quad \text{and} \quad (1- \pi/n)^{n},
+  \end{align*}\]</span>
+</div>
+<div>
+and examples of divergent sequences include
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  ((-1)^{n})_{n=1}^{\infty}, \quad (\cos(n\pi))_{n=1}^{\infty} \quad \text{and} \quad (n^{1/2})_{n=1}^{\infty}.
+  \end{align*}\]</span>
+</div>
+<div>
+Although all three of the above sequences diverge, the last one diverges for different reasons to the first two, and in fact belongs to a class of sequences which diverge to infinity.
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 1.14  (diverging to infinity) </strong></span></p>
+<div class="insatz">
+A sequence <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> <strong>diverges to infinity</strong> if for every real number <span class="nbr"><span class="math inline">\(M\)</span>,</span> there is an integer <span class="math inline">\(K\)</span> such that <span class="math inline">\(a_{n} &gt; M\)</span> for all <span class="nbr"><span class="math inline">\(n \geq K\)</span>.</span> If this condition holds, then we write <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} a_{n} = \infty\)</span>.</span> Similarly, a sequence <span class="math inline">\((a_{n})_{n = N}^{\infty}\)</span> <strong>diverges to negative infinity</strong> if for every real number <span class="nbr"><span class="math inline">\(M\)</span>,</span> there is an integer <span class="math inline">\(K\)</span> such that <span class="math inline">\(a_{n} &lt; M\)</span> for all <span class="nbr"><span class="math inline">\(n \geq K\)</span>.</span> If this condition holds, then we write <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} a_{n} = -\infty\)</span>.</span>
+</div>
+</div>
+</div>
+<div>
+Two other types of sequences which play an important role in calculus are bounded and monotonic sequences. Note a sequence can be bounded but not convergent, monotonic but not convergent, convergent but not monotonic. However, a convergent sequence is always bounded.
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 1.15  (bounded and monotonic sequences) </strong></span>Let <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> denote a sequence of real numbers.</p>
+<ul>
+<li><p>If there exists a real number <span class="math inline">\(M\)</span> such that <span class="math inline">\(a_{n} \leq M\)</span> for all integers <span class="nbr"><span class="math inline">\(n \geq N\)</span>,</span> then <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is said to be <strong>bounded from above</strong> and <span class="math inline">\(M\)</span> is called an <strong>upper bound</strong> of <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>.</span> If <span class="math inline">\(M\)</span> is an upper bound for <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>,</span> but no number less than <span class="math inline">\(M\)</span> is an upper bound for <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>,</span> then <span class="math inline">\(M\)</span> is called the <strong>least upper bound</strong> of <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>.</span></p></li>
+<li><p>If there exists a real number <span class="math inline">\(m\)</span> such that <span class="math inline">\(a_{n} \geq m\)</span> for all integers <span class="nbr"><span class="math inline">\(n \geq N\)</span>,</span> then <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is said to be <strong>bounded from below</strong> and <span class="math inline">\(m\)</span> is called a <strong>lower bound</strong> of <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>.</span> If <span class="math inline">\(m\)</span> is a lower bound, but no number greater than <span class="math inline">\(m\)</span> is a lower bound of <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>,</span> then <span class="math inline">\(m\)</span> is called the <strong>greatest lower bound</strong> of <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>.</span></p></li>
+<li><p>If <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is bounded from above and bounded from below, then <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is said to be <strong>bounded</strong>. If a sequence is not bounded, then it called <strong>unbounded</strong>.</p></li>
+<li><p>If <span class="math inline">\(a_{n} \geq a_{n + 1}\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span> beyond some index <span class="nbr"><span class="math inline">\(M \in \mathbb{N}\)</span>,</span> then <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is called <strong>eventually non‑increasing</strong>.</p></li>
+<li><p>If <span class="math inline">\(a_{n} \leq a_{n + 1}\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span> beyond some index <span class="nbr"><span class="math inline">\(M \in \mathbb{N}\)</span>,</span> then <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is called <strong>eventually non‑decreasing</strong>.</p></li>
+<li><p>If <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> is eventually non‑increasing or eventually non‑decreasing, then <span class="math inline">\(A\)</span> is called <strong>eventually monotonic</strong>.</p></li>
+</ul>
+</div>
+</div>
+<div>
+<p>Three useful results to determine when a sequence is convergent are the sandwich theorem, the bounded monotonic sequence theorem and the continuous function theorem.</p>
+</div>
+<div class="thmenv">
+<div class="theorem" echo="TRUE">
+<p><span id="thm:unlabeled-div-20" class="theorem"><strong>Theorem 1.8  (sandwich theorem) </strong></span>Let <span class="nbr"><span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span>,</span> <span class="nbr"><span class="math inline">\((b_{n})_{n = 1}^{\infty}\)</span>,</span> and <span class="math inline">\(( c_{n} )_{n = 1}^{\infty}\)</span> denote three sequences of real numbers. If <span class="math inline">\(a_{n} \leq b_{n} \leq c_{n}\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span> beyond some index <span class="nbr"><span class="math inline">\(M \in \mathbb{N}\)</span>,</span> and if <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} a_{n} = \lim_{n \to \infty} c_{n} = L\)</span>,</span> for some <span class="nbr"><span class="math inline">\(L \in \mathbb{R}\)</span>,</span> then <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} b_{n} = L\)</span>.</span></p>
+</div>
+<div class="thmbreak">
+
+</div>
+<div class="theorem" echo="TRUE">
+<p><span id="thm:unlabeled-div-21" class="theorem"><strong>Theorem 1.9  (bounded monotonic sequence theorem) </strong></span>If a sequence is either eventually non‑increasing and bounded from below, or eventually non‑decreasing and bounded from above, then the sequence is convergent.</p>
+</div>
+<div class="thmbreak">
+
+</div>
+<div class="theorem" echo="TRUE">
+<p><span id="thm:unlabeled-div-22" class="theorem"><strong>Theorem 1.10  (continuous function theorem) </strong></span>If <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> denotes a convergent sequence of real numbers with limit <span class="math inline">\(L\)</span> and if <span class="math inline">\(f\)</span> is a continuous function defined on a <span class="nbr">non-empty</span> open interval containing <span class="math inline">\(L\)</span> and the set <span class="nbr"><span class="math inline">\(\{ a_{n} \, \colon \, n \in \mathbb{N}\}\)</span>,</span> then <span class="math inline">\((f(a_{n}))_{n = 1}^{\infty}\)</span> is a convergent sequence with limit <span class="nbr"><span class="math inline">\(f(L)\)</span>.</span></p>
+</div>
+</div>
+</div>
+<div id="seriesfoundations" class="section level3 unnumbered unlisted hasAnchor">
+<h3>Series<a href="sequencesseriesfoundations.html#seriesfoundations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div>
+A <strong>series</strong> is the sum of a sequence <span class="math inline">\((a_{n})_{n=1}^{\infty}\)</span> of real numbers:
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \sum_{n = 1}^{\infty} a_{n} = a_{1} + a_{2} + a_{3} + \dots   
+  \end{align*}\]</span>
+</div>
+<div>
+For <span class="nbr"><span class="math inline">\(n \in \mathbb{N}\)</span>,</span> the value <span class="math inline">\(a_{n}\)</span> is called the <strong><span class="nbr"><span class="math inline">\(n\)</span>-th</span> term</strong> of the series, and the sequence <span class="nbr"><span class="math inline">\((s_{n})_{n = N}^{\infty}\)</span>,</span> determined by <span class="math inline">\(s_{n} = a_{1} + a_{2} + \dots + a_{n}\)</span> for <span class="nbr"><span class="math inline">\(n \in \mathbb{N}\)</span>,</span> is called the <strong>sequence of partial sums</strong> with <span class="math inline">\(s_{n}\)</span> often referred to as the <strong><span class="nbr"><span class="math inline">\(n\)</span>-th</span> partial sum</strong>. If the sequence <span class="math inline">\((s_{n})_{n = N}^{\infty}\)</span> of partial sums converges to a limit <span class="nbr"><span class="math inline">\(L\)</span>,</span> then we write
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  \sum_{n = 1}^{\infty} a_{n} = L,
+  \end{align*}\]</span>
+</div>
+<div>
+and say that the series <strong>converges</strong> with <strong>sum</strong> is equal to <span class="nbr"><span class="math inline">\(L\)</span>.</span> On the other hand, if the sequence of partial sums <span class="math inline">\((s_{n})_{n = N}^{\infty}\)</span> diverges, then we say that the series <strong>diverges</strong>. If <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> and <span class="math inline">\(\sum_{n = N}^{\infty} b_{n}\)</span> are two convergent series with sums <span class="math inline">\(\alpha\)</span> and <span class="nbr"><span class="math inline">\(\beta\)</span>,</span> respectively, then the infinite series
+</div>
+<div class="aligncontainer">
+<span class="math display" id="eq:sumsofseries">\[\begin{align}
+  \sum_{n = 1}^{\infty} (a_{n} + b_{n})
+  \tag{1.1}
+  \end{align}\]</span>
+</div>
+<div>
+<p>converges with sum equal to <span class="nbr"><span class="math inline">\(\alpha + \beta\)</span>.</span> On the other hand, if one of our initial two series was divergent and the other was convergent, then the series given in <a href="sequencesseriesfoundations.html#eq:sumsofseries">(1.1)</a> would diverge. Here, we have defined a series to be indexed over the natural numbers, however, a series may be index over any totally ordered countable set.</p>
+</div>
+<div>
+<p>There are several other useful tests to determine if a series is convergent or divergent, for instance, the <span class="nbr"><span class="math inline">\(n\)</span>-th</span> term test, the integral test, the comparison and limit comparison test, the ratio and root test and Leibniz’s test. Below we give a brief discussion of each of these tests.</p>
+</div>
+<div class="thmenv">
+<p><strong><span class="nbr"><span class="math inline">\(n\)</span>-th</span> term test</strong> If <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> denotes a sequence of real numbers and if <span class="math inline">\(\lim_{n \to \infty} a_{n}\)</span> fails to exists or is different from zero, then <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> is a divergent series.</p>
+<p><strong>Integral test</strong> If <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> denote a sequence of real numbers such that there exists a continuous eventually non‑increasing non‑negative function <span class="math inline">\(f \, \colon \, [1, \infty) \to \mathbb{R}\)</span> with <span class="math inline">\(f(n) = a_{n}\)</span> for all <span class="nbr"><span class="math inline">\(n \in \mathbb{N}\)</span>,</span> then either <span class="math inline">\(\sum_{n = N}^{\infty} a_{n}\)</span> and <span class="math inline">\(\int_{M}^{\infty} f(x) \, \mathrm{d}x\)</span> both converge or both diverge.</p>
+<p><strong>Comparison test</strong> Let <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> and <span class="math inline">\((b_{n})_{n=1}^{\infty}\)</span> denote two sequences of non‑negative real numbers with <span class="math inline">\(a_{n} \leq b_{n}\)</span> for all <span class="nbr"><span class="math inline">\(n \in \mathbb{N}\)</span>.</span> If <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> diverges, then <span class="math inline">\(\sum_{n = 1}^{\infty} b_{n}\)</span> diverge, and if <span class="math inline">\(\sum_{n = 1}^{\infty} b_{n}\)</span> converges, then <span class="math inline">\(\sum_{n = N}^{\infty} a_{n}\)</span> converge.</p>
+<p><strong>Limit comparison test</strong> Let <span class="math inline">\((a_{n})_{n = 1}^{\infty}\)</span> and <span class="math inline">\((b_{n})_{n = N}^{\infty}\)</span> denote two sequences of positive real numbers. If <span class="math inline">\(\lim_{n \to \infty} a_{n}/b_{n}\)</span> exists and is non‑zero, then either <span class="math inline">\(\sum_{n = N}^{\infty} a_{n}\)</span> and <span class="math inline">\(\sum_{n = N}^{\infty} b_{n}\)</span> both converge or both diverge.</p>
+<p><strong>Ratio test</strong> Let <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> denote a sequence of positive real numbers with <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} a_{n+1}/a_{n} = p\)</span>,</span> for some <span class="nbr"><span class="math inline">\(p \in \mathbb{R}\)</span>.</span> If <span class="nbr"><span class="math inline">\(p &lt; 1\)</span>,</span> then the series <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> converges, and if <span class="math inline">\(p &gt; 1\)</span> or if <span class="nbr"><span class="math inline">\(p = \infty\)</span>,</span> then the series <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> diverges.</p>
+<p><strong>Root test</strong> Let <span class="math inline">\(( a_{n} )_{n = 1}^{\infty}\)</span> denote a sequence of non‑negative real numbers with <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} \sqrt[n]{a_{n}} = p\)</span>,</span> for some <span class="nbr"><span class="math inline">\(p \in \mathbb{R}\)</span>.</span> If <span class="nbr"><span class="math inline">\(p &lt; 1\)</span>,</span> then the series <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> converges, and if <span class="math inline">\(p &gt; 1\)</span> or if <span class="nbr"><span class="math inline">\(p = \infty\)</span>,</span> then the series <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> diverges.</p>
+<p><strong>Leibniz’s test</strong>The series <span class="math inline">\(\sum_{n = N}^{\infty} (-1)^{n} u_{n}\)</span> converges if <span class="math inline">\((u_{n})_{n = N}^{\infty}\)</span> is bounded below by zero and eventually non‑increasing and <span class="nbr"><span class="math inline">\(\lim_{n \to \infty} u_{n} = 0\)</span>.</span></p>
+</div>
+<div>
+<p>The series to which Leibniz’s test applies is often referred to as an alternating series. A stronger notion of convergence for such series is that of absolutely convergent. A series <span class="math inline">\(\sum_{n = 1}^{\infty} a_{n}\)</span> is said to be <strong>absolutely convergent</strong> if the series <span class="math inline">\(\sum_{n = 1}^{\infty} \lvert a_{n} \rvert\)</span> is convergent. As the name suggests, if a series is absolutely convergent then it is convergent. However, the converse is not true. Indeed, we call a series which converges but does not converge absolutely <strong>conditionally convergent</strong>. Let us conclude this section with a collection of well‑known series.</p>
+</div>
+<div class="thmenv">
+<p>A <strong>geometric series</strong> is a series of the form <span class="nbr"><span class="math inline">\(\sum_{n = 0}^{\infty} a r^{n}\)</span>,</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(r\)</span> are fixed real numbers. The series converges if and only if the absolute value of the <strong>ratio</strong> <span class="math inline">\(r\)</span> is strictly less than <span class="nbr"><span class="math inline">\(1\)</span>,</span> in which case the sum of the series is <span class="nbr"><span class="math inline">\(a/1-r\)</span>.</span> This is sometime referred to as the <em>geometric series identity</em>.</p>
+<p>A <strong><span class="nbr"><span class="math inline">\(p\)</span>-series</span></strong> is a series of the form <span class="nbr"><span class="math inline">\(\sum_{n = 0}^{\infty} n^{-p}\)</span>,</span> where <span class="math inline">\(p\)</span> is a fixed real numbers. The series converges if and only if <span class="nbr"><span class="math inline">\(p \in (0, 1)\)</span>.</span> If <span class="nbr"><span class="math inline">\(p=1\)</span>,</span> then the series <span class="math inline">\(\sum_{n = 0}^{\infty} n\)</span> is also known as the <strong>harmonic series</strong>.</p>
+<p>A <strong>power series</strong> is a series of the form <span class="nbr"><span class="math inline">\(\sum_{n = 0}^{\infty} c_{n} (x - a)^{n}\)</span>,</span> where <span class="math inline">\(x\)</span> is a variable, <span class="math inline">\(a\)</span> is a constant, and <span class="math inline">\((c_{n})_{n = 1}^{\infty}\)</span> is a sequence of real numbers. By convention, if <span class="nbr"><span class="math inline">\(x = a\)</span>,</span> then we set <span class="nbr"><span class="math inline">\((x-a)^0 = 1\)</span>.</span> The <strong>radius of convergence</strong> of a power series is the non‑negative real number <span class="math inline">\(R\)</span> such that for <span class="math inline">\(x\)</span> with <span class="math inline">\(\lvert x - a \rvert &lt; R\)</span> the series converges, and for all <span class="math inline">\(x\)</span> with <span class="math inline">\(\lvert x - a \rvert &gt; R\)</span> the series diverges.</p>
+<p>A <strong>trigonometric series</strong> is a series of the form <span class="nbr"><span class="math inline">\(\sum_{n = 0}^{\infty} a_{n} \cos(nx) +b_{n} \sin(nx)\)</span>,</span> where <span class="math inline">\(x\)</span> is a variable, and<span class="math inline">\((a_{n})_{n = 0}^{\infty}\)</span> and <span class="math inline">\((b_{n})_{n=0}^{\infty}\)</span> are sequences of real numbers.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="parametriccurvesfoundations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taylorandfourierseriesfoundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false,
+"fig_caption": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

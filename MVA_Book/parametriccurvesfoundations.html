@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.7 Parametric curves | Multivariable and vector calculus</title>
+  <meta name="description" content="1.7 Parametric curves | Multivariable and vector calculus" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.7 Parametric curves | Multivariable and vector calculus" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.7 Parametric curves | Multivariable and vector calculus" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="integrationfoundations.html"/>
+<link rel="next" href="sequencesseriesfoundations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.2.0/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.13.0/leaflet-providers_1.13.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.2.0/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/thmhighlight.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariable and vector calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Foundations (Prerequisites)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="symbolsandsets.html"><a href="symbolsandsets.html"><i class="fa fa-check"></i><b>1.1</b> Mathematical symbols and sets</a></li>
+<li class="chapter" data-level="1.2" data-path="vcs.html"><a href="vcs.html"><i class="fa fa-check"></i><b>1.2</b> Vectors and coordinate systems</a></li>
+<li class="chapter" data-level="1.3" data-path="functionsfoundations.html"><a href="functionsfoundations.html"><i class="fa fa-check"></i><b>1.3</b> Functions</a></li>
+<li class="chapter" data-level="1.4" data-path="differentiationfoundations.html"><a href="differentiationfoundations.html"><i class="fa fa-check"></i><b>1.4</b> Differentiation</a></li>
+<li class="chapter" data-level="1.5" data-path="critical_points_foundations.html"><a href="critical_points_foundations.html"><i class="fa fa-check"></i><b>1.5</b> Critical points</a></li>
+<li class="chapter" data-level="1.6" data-path="integrationfoundations.html"><a href="integrationfoundations.html"><i class="fa fa-check"></i><b>1.6</b> Integration</a></li>
+<li class="chapter" data-level="1.7" data-path="parametriccurvesfoundations.html"><a href="parametriccurvesfoundations.html"><i class="fa fa-check"></i><b>1.7</b> Parametric curves</a></li>
+<li class="chapter" data-level="1.8" data-path="sequencesseriesfoundations.html"><a href="sequencesseriesfoundations.html"><i class="fa fa-check"></i><b>1.8</b> Sequences and series</a></li>
+<li class="chapter" data-level="1.9" data-path="taylorandfourierseriesfoundations.html"><a href="taylorandfourierseriesfoundations.html"><i class="fa fa-check"></i><b>1.9</b> Taylor and Fourier series</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschapterone.html"><a href="practiceproblemschapterone.html"><i class="fa fa-check"></i>Practice problems - Chapter 1</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions-of-several-variables.html"><a href="functions-of-several-variables.html"><i class="fa fa-check"></i><b>2</b> Functions of several variables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="limitsparttwoFSV.html"><a href="limitsparttwoFSV.html"><i class="fa fa-check"></i><b>2.1</b> Limits (part II)</a></li>
+<li class="chapter" data-level="2.2" data-path="continuityparttwoFSV.html"><a href="continuityparttwoFSV.html"><i class="fa fa-check"></i><b>2.2</b> Continuity (part II)</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschaptertwo.html"><a href="practiceproblemschaptertwo.html"><i class="fa fa-check"></i>Practice problems – Chapter 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="partialderivatives.html"><a href="partialderivatives.html"><i class="fa fa-check"></i><b>3</b> Partial derivatives</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="pd.html"><a href="pd.html"><i class="fa fa-check"></i><b>3.1</b> Partial derivatives</a></li>
+<li class="chapter" data-level="3.2" data-path="thechainrule.html"><a href="thechainrule.html"><i class="fa fa-check"></i><b>3.2</b> The chain rule</a></li>
+<li class="chapter" data-level="3.3" data-path="implicitdifferentiation.html"><a href="implicitdifferentiation.html"><i class="fa fa-check"></i><b>3.3</b> Implicit differentiation</a></li>
+<li class="chapter" data-level="3.4" data-path="pde.html"><a href="pde.html"><i class="fa fa-check"></i><b>3.4</b> Partial differential equations</a></li>
+<li class="chapter" data-level="3.5" data-path="directionalderivative.html"><a href="directionalderivative.html"><i class="fa fa-check"></i><b>3.5</b> Directional derivative</a></li>
+<li class="chapter" data-level="" data-path="practiceproblemschapterthree.html"><a href="practiceproblemschapterthree.html"><i class="fa fa-check"></i>Practice problems – Chapter 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multivariable and vector calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="parametriccurvesfoundations" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Parametric curves<a href="parametriccurvesfoundations.html#parametriccurvesfoundations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div>
+<p>Nature is filled with curves that fascinate the minds of artists and the curiosity of scientists, for instance, the outline of the moon, the delicate folds in the petal of a flower, the sinuous curves of the Nordic fjords and the graceful silhouette of a bird in flight. A common way to represent such curves is via the use of parametric equations.</p>
+</div>
+<div>
+<p>If <span class="math inline">\(f\)</span> is a continuous function, the graph of <span class="nbr"><span class="math inline">\(f\)</span>,</span> is often called a plane curve. However, this definition is restrictive because it excludes many useful curves. The following definition provides a more suitable definition.</p>
+</div>
+<div class="thmenv">
+<div class="definition" echo="TRUE">
+<p><span id="def:planecurve" class="definition"><strong>Definition 1.12  (plane curve) </strong></span></p>
+<div class="insatz">
+A <strong>plane curve</strong> is a collection <span class="math inline">\(C\)</span> of ordered pairs <span class="nbr"><span class="math inline">\((f(t), g(t))\)</span>,</span> where <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous functions on a <span class="nbr">non-empty</span> interval <span class="nbr"><span class="math inline">\(I\)</span>,</span> and <span class="nbr"><span class="math inline">\(t \in I\)</span>.</span>
+</div>
+</div>
+</div>
+<div>
+<p>The <strong>graph</strong> of the a plane curve <span class="nbr"><span class="math inline">\(C\)</span>,</span> as defined in Definition <a href="parametriccurvesfoundations.html#def:planecurve">1.12</a>, consists of all points <span class="math inline">\(P(t) = (f(t), g(t))\)</span> in the <span class="nbr"><span class="math inline">\(x\)</span>-<span class="math inline">\(y\)</span></span> plane. It is common for the terms <em>curve</em> and <em>graph of a curve</em> to be used interchangeably. The points <span class="math inline">\(P(a)\)</span> and <span class="math inline">\(P(b) \in C\)</span> are often called the <strong>end points</strong> of <span class="nbr"><span class="math inline">\(C\)</span>.</span> Three examples of plane curves are sketched in Figure <a href="parametriccurvesfoundations.html#fig:fig-par-1">1.2</a>, where <span class="math inline">\(I\)</span> is the closed interval <span class="nbr"><span class="math inline">\([a, b]\)</span>,</span> for some given <span class="math inline">\(a\)</span> and <span class="nbr"><span class="math inline">\(b \in \mathbb{R}\)</span>,</nobr> with <span class="nbr"><span class="math inline">\(a &lt; b\)</span>.</span> In Figure <a href="parametriccurvesfoundations.html#fig:fig-par-1">1.2</a><a href="parametriccurvesfoundations.html#fig:fig-par-1">(a)</a> we have that <span class="nbr"><span class="math inline">\(P(a) \neq P(b)\)</span>,</span> and note that the given curve intersects itself, that there exist <span class="math inline">\(s\)</span> and <span class="math inline">\(t \in [a, b]\)</span> such that <span class="nbr"><span class="math inline">\(P(s) = P(t)\)</span>.</span> If we have that <span class="math inline">\(P(a) = P(b)\)</span> as we have in Figures <a href="parametriccurvesfoundations.html#fig:fig-par-1">1.2</a><a href="parametriccurvesfoundations.html#fig:fig-par-1">(b)</a> and  <a href="parametriccurvesfoundations.html#fig:fig-par-1">1.2</a><a href="parametriccurvesfoundations.html#fig:fig-par-1">(c)</a>, then <span class="math inline">\(C\)</span> is called <strong>closed</strong>; if in addition to being closed, <span class="math inline">\(C\)</span> being closed, if <span class="math inline">\(C\)</span> does not intersect itself in anywhere other than <span class="nbr"><span class="math inline">\(P(a) = P(b)\)</span>,</span> then it is said to be a <strong>simple closed curve</strong>.</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-par-1"></span>
+<img src="Images/Chapter_1_7/par_1-1.png" alt="Examples of plane curve." width="817" /><img src="Images/Chapter_1_7/par_3-1.png" alt="Examples of plane curve." width="817" /><img src="Images/Chapter_1_7/par_2-1.png" alt="Examples of plane curve." width="824" />
+<p class="caption">
+FIGURE 1.2: Examples of plane curve.
+</p>
+</div>
+<details>
+<summary>
+Show/hide image source code
+</summary>
+<div class="kodesh">
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="parametriccurvesfoundations.html#cb2-1" tabindex="-1"></a><span class="co">%%Image (a) generated using \LaTeX package tikz.%%</span></span>
+<span id="cb2-2"><a href="parametriccurvesfoundations.html#cb2-2" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb2-3"><a href="parametriccurvesfoundations.html#cb2-3" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-4"><a href="parametriccurvesfoundations.html#cb2-4" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb2-5"><a href="parametriccurvesfoundations.html#cb2-5" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb2-6"><a href="parametriccurvesfoundations.html#cb2-6" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb2-7"><a href="parametriccurvesfoundations.html#cb2-7" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb2-8"><a href="parametriccurvesfoundations.html#cb2-8" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb2-9"><a href="parametriccurvesfoundations.html#cb2-9" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb2-10"><a href="parametriccurvesfoundations.html#cb2-10" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb2-11"><a href="parametriccurvesfoundations.html#cb2-11" tabindex="-1"></a><span class="fu">\pgfplotsset</span>{every axis/.append style={</span>
+<span id="cb2-12"><a href="parametriccurvesfoundations.html#cb2-12" tabindex="-1"></a>  axis x line=middle,</span>
+<span id="cb2-13"><a href="parametriccurvesfoundations.html#cb2-13" tabindex="-1"></a>  <span class="co">% puts the x axis in the middle</span></span>
+<span id="cb2-14"><a href="parametriccurvesfoundations.html#cb2-14" tabindex="-1"></a>  axis y line=middle,</span>
+<span id="cb2-15"><a href="parametriccurvesfoundations.html#cb2-15" tabindex="-1"></a>  <span class="co">% puts the y axis in the middle</span></span>
+<span id="cb2-16"><a href="parametriccurvesfoundations.html#cb2-16" tabindex="-1"></a>  axis line style={thick,-&gt;,color=black},</span>
+<span id="cb2-17"><a href="parametriccurvesfoundations.html#cb2-17" tabindex="-1"></a>  <span class="co">% arrows on the axis</span></span>
+<span id="cb2-18"><a href="parametriccurvesfoundations.html#cb2-18" tabindex="-1"></a>  xlabel={<span class="ss">$x$</span>},</span>
+<span id="cb2-19"><a href="parametriccurvesfoundations.html#cb2-19" tabindex="-1"></a>  <span class="co">% default put x on x-axis</span></span>
+<span id="cb2-20"><a href="parametriccurvesfoundations.html#cb2-20" tabindex="-1"></a>  ylabel={<span class="ss">$y$</span>},</span>
+<span id="cb2-21"><a href="parametriccurvesfoundations.html#cb2-21" tabindex="-1"></a>  <span class="co">% default put y on y-axis</span></span>
+<span id="cb2-22"><a href="parametriccurvesfoundations.html#cb2-22" tabindex="-1"></a>  ticks=none,</span>
+<span id="cb2-23"><a href="parametriccurvesfoundations.html#cb2-23" tabindex="-1"></a>}}</span>
+<span id="cb2-24"><a href="parametriccurvesfoundations.html#cb2-24" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-25"><a href="parametriccurvesfoundations.html#cb2-25" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-26"><a href="parametriccurvesfoundations.html#cb2-26" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb2-27"><a href="parametriccurvesfoundations.html#cb2-27" tabindex="-1"></a><span class="fu">\tikzset</span>{-&gt;-/.style={decoration={</span>
+<span id="cb2-28"><a href="parametriccurvesfoundations.html#cb2-28" tabindex="-1"></a>  markings,</span>
+<span id="cb2-29"><a href="parametriccurvesfoundations.html#cb2-29" tabindex="-1"></a>    mark=at position 0.1 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-30"><a href="parametriccurvesfoundations.html#cb2-30" tabindex="-1"></a>    mark=at position 0.3 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-31"><a href="parametriccurvesfoundations.html#cb2-31" tabindex="-1"></a>    mark=at position 0.45 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-32"><a href="parametriccurvesfoundations.html#cb2-32" tabindex="-1"></a>    mark=at position 0.55 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-33"><a href="parametriccurvesfoundations.html#cb2-33" tabindex="-1"></a>    mark=at position 0.7 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-34"><a href="parametriccurvesfoundations.html#cb2-34" tabindex="-1"></a>    mark=at position 0.9 with {<span class="fu">\arrow</span>{&gt;}}},</span>
+<span id="cb2-35"><a href="parametriccurvesfoundations.html#cb2-35" tabindex="-1"></a>  postaction={decorate}</span>
+<span id="cb2-36"><a href="parametriccurvesfoundations.html#cb2-36" tabindex="-1"></a>  }</span>
+<span id="cb2-37"><a href="parametriccurvesfoundations.html#cb2-37" tabindex="-1"></a>}</span>
+<span id="cb2-38"><a href="parametriccurvesfoundations.html#cb2-38" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-39"><a href="parametriccurvesfoundations.html#cb2-39" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb2-40"><a href="parametriccurvesfoundations.html#cb2-40" tabindex="-1"></a>    xmin=-4,xmax=4,</span>
+<span id="cb2-41"><a href="parametriccurvesfoundations.html#cb2-41" tabindex="-1"></a>    ymin=-10,ymax=10,</span>
+<span id="cb2-42"><a href="parametriccurvesfoundations.html#cb2-42" tabindex="-1"></a><span class="co">%   grid=both,</span></span>
+<span id="cb2-43"><a href="parametriccurvesfoundations.html#cb2-43" tabindex="-1"></a>    <span class="co">% adds gridlines</span></span>
+<span id="cb2-44"><a href="parametriccurvesfoundations.html#cb2-44" tabindex="-1"></a>    ]</span>
+<span id="cb2-45"><a href="parametriccurvesfoundations.html#cb2-45" tabindex="-1"></a>    <span class="fu">\addplot</span> [-&gt;-, thick, domain=-2.25:2.25, samples=50, color=Cerulean] ({0.5*(x^3-3*x)},{3*x^2-9});</span>
+<span id="cb2-46"><a href="parametriccurvesfoundations.html#cb2-46" tabindex="-1"></a>    <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(2.32031,6.1875)};</span>
+<span id="cb2-47"><a href="parametriccurvesfoundations.html#cb2-47" tabindex="-1"></a>    <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(-2.32031,6.1875)};</span>
+<span id="cb2-48"><a href="parametriccurvesfoundations.html#cb2-48" tabindex="-1"></a>    <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(1,-6)};</span>
+<span id="cb2-49"><a href="parametriccurvesfoundations.html#cb2-49" tabindex="-1"></a>  <span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb2-50"><a href="parametriccurvesfoundations.html#cb2-50" tabindex="-1"></a><span class="fu">\node</span> at (0.9, 4.625) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(a)}$</span>};</span>
+<span id="cb2-51"><a href="parametriccurvesfoundations.html#cb2-51" tabindex="-1"></a><span class="fu">\node</span> at (5.95, 4.625) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(b)}$</span>};</span>
+<span id="cb2-52"><a href="parametriccurvesfoundations.html#cb2-52" tabindex="-1"></a><span class="fu">\node</span> at (4.75, 1.125) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(t)}$</span>};</span>
+<span id="cb2-53"><a href="parametriccurvesfoundations.html#cb2-53" tabindex="-1"></a><span class="fu">\node</span>[right] at (0, -0.75) {(a) Example of a plane curve.};</span>
+<span id="cb2-54"><a href="parametriccurvesfoundations.html#cb2-54" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-55"><a href="parametriccurvesfoundations.html#cb2-55" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-56"><a href="parametriccurvesfoundations.html#cb2-56" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span>
+<span id="cb2-57"><a href="parametriccurvesfoundations.html#cb2-57" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="parametriccurvesfoundations.html#cb2-58" tabindex="-1"></a><span class="co">%%Image (b) generated using \LaTeX package *tikz*.%%</span></span>
+<span id="cb2-59"><a href="parametriccurvesfoundations.html#cb2-59" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb2-60"><a href="parametriccurvesfoundations.html#cb2-60" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-61"><a href="parametriccurvesfoundations.html#cb2-61" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb2-62"><a href="parametriccurvesfoundations.html#cb2-62" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb2-63"><a href="parametriccurvesfoundations.html#cb2-63" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb2-64"><a href="parametriccurvesfoundations.html#cb2-64" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb2-65"><a href="parametriccurvesfoundations.html#cb2-65" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb2-66"><a href="parametriccurvesfoundations.html#cb2-66" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb2-67"><a href="parametriccurvesfoundations.html#cb2-67" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb2-68"><a href="parametriccurvesfoundations.html#cb2-68" tabindex="-1"></a><span class="fu">\pgfplotsset</span>{every axis/.append style={</span>
+<span id="cb2-69"><a href="parametriccurvesfoundations.html#cb2-69" tabindex="-1"></a>  axis x line=middle,</span>
+<span id="cb2-70"><a href="parametriccurvesfoundations.html#cb2-70" tabindex="-1"></a>  <span class="co">% puts the x a  xis in the middle</span></span>
+<span id="cb2-71"><a href="parametriccurvesfoundations.html#cb2-71" tabindex="-1"></a>  axis y line=middle,</span>
+<span id="cb2-72"><a href="parametriccurvesfoundations.html#cb2-72" tabindex="-1"></a>  <span class="co">% puts the y axis in the middle</span></span>
+<span id="cb2-73"><a href="parametriccurvesfoundations.html#cb2-73" tabindex="-1"></a>  axis line style={thick,-&gt;,color=black},</span>
+<span id="cb2-74"><a href="parametriccurvesfoundations.html#cb2-74" tabindex="-1"></a>  <span class="co">% arrows on the axis</span></span>
+<span id="cb2-75"><a href="parametriccurvesfoundations.html#cb2-75" tabindex="-1"></a>  xlabel={<span class="ss">$x$</span>},</span>
+<span id="cb2-76"><a href="parametriccurvesfoundations.html#cb2-76" tabindex="-1"></a>  <span class="co">% default put x on x-axis</span></span>
+<span id="cb2-77"><a href="parametriccurvesfoundations.html#cb2-77" tabindex="-1"></a>  ylabel={<span class="ss">$y$</span>},</span>
+<span id="cb2-78"><a href="parametriccurvesfoundations.html#cb2-78" tabindex="-1"></a>  <span class="co">% default put y on y-axis</span></span>
+<span id="cb2-79"><a href="parametriccurvesfoundations.html#cb2-79" tabindex="-1"></a>  ticks=none,</span>
+<span id="cb2-80"><a href="parametriccurvesfoundations.html#cb2-80" tabindex="-1"></a>}}</span>
+<span id="cb2-81"><a href="parametriccurvesfoundations.html#cb2-81" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb2-82"><a href="parametriccurvesfoundations.html#cb2-82" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-83"><a href="parametriccurvesfoundations.html#cb2-83" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-84"><a href="parametriccurvesfoundations.html#cb2-84" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb2-85"><a href="parametriccurvesfoundations.html#cb2-85" tabindex="-1"></a><span class="fu">\tikzset</span>{-&gt;-/.style={decoration={</span>
+<span id="cb2-86"><a href="parametriccurvesfoundations.html#cb2-86" tabindex="-1"></a>  markings,</span>
+<span id="cb2-87"><a href="parametriccurvesfoundations.html#cb2-87" tabindex="-1"></a>    mark=at position 0.05 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-88"><a href="parametriccurvesfoundations.html#cb2-88" tabindex="-1"></a>    mark=at position 0.2 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-89"><a href="parametriccurvesfoundations.html#cb2-89" tabindex="-1"></a>    mark=at position 0.35 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-90"><a href="parametriccurvesfoundations.html#cb2-90" tabindex="-1"></a>    mark=at position 0.475 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-91"><a href="parametriccurvesfoundations.html#cb2-91" tabindex="-1"></a>    mark=at position 0.525 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-92"><a href="parametriccurvesfoundations.html#cb2-92" tabindex="-1"></a>    mark=at position 0.65 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-93"><a href="parametriccurvesfoundations.html#cb2-93" tabindex="-1"></a>    mark=at position 0.8 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-94"><a href="parametriccurvesfoundations.html#cb2-94" tabindex="-1"></a>    mark=at position 0.95 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-95"><a href="parametriccurvesfoundations.html#cb2-95" tabindex="-1"></a>  },</span>
+<span id="cb2-96"><a href="parametriccurvesfoundations.html#cb2-96" tabindex="-1"></a>  postaction={decorate}</span>
+<span id="cb2-97"><a href="parametriccurvesfoundations.html#cb2-97" tabindex="-1"></a>  }</span>
+<span id="cb2-98"><a href="parametriccurvesfoundations.html#cb2-98" tabindex="-1"></a>}</span>
+<span id="cb2-99"><a href="parametriccurvesfoundations.html#cb2-99" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-100"><a href="parametriccurvesfoundations.html#cb2-100" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb2-101"><a href="parametriccurvesfoundations.html#cb2-101" tabindex="-1"></a>    xmin=-4,xmax=4,</span>
+<span id="cb2-102"><a href="parametriccurvesfoundations.html#cb2-102" tabindex="-1"></a>    ymin=-4,ymax=4,</span>
+<span id="cb2-103"><a href="parametriccurvesfoundations.html#cb2-103" tabindex="-1"></a><span class="co">%   grid=both,</span></span>
+<span id="cb2-104"><a href="parametriccurvesfoundations.html#cb2-104" tabindex="-1"></a>    <span class="co">% adds gridlines</span></span>
+<span id="cb2-105"><a href="parametriccurvesfoundations.html#cb2-105" tabindex="-1"></a>  ]</span>
+<span id="cb2-106"><a href="parametriccurvesfoundations.html#cb2-106" tabindex="-1"></a>  <span class="fu">\addplot</span> [-&gt;-, thick, domain=0:360, samples=500, color=Cerulean, variable=<span class="fu">\t</span>]</span>
+<span id="cb2-107"><a href="parametriccurvesfoundations.html#cb2-107" tabindex="-1"></a>    ({2*sin(t)}, {2*cos(3*t)});</span>
+<span id="cb2-108"><a href="parametriccurvesfoundations.html#cb2-108" tabindex="-1"></a>  <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(1.75,2)};</span>
+<span id="cb2-109"><a href="parametriccurvesfoundations.html#cb2-109" tabindex="-1"></a>  <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(-1.9125,1.5)};</span>
+<span id="cb2-110"><a href="parametriccurvesfoundations.html#cb2-110" tabindex="-1"></a>  <span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb2-111"><a href="parametriccurvesfoundations.html#cb2-111" tabindex="-1"></a><span class="fu">\node</span> at (4.9125, 4.55) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(a)=P(b)}$</span>};</span>
+<span id="cb2-112"><a href="parametriccurvesfoundations.html#cb2-112" tabindex="-1"></a><span class="fu">\node</span> at (1.25, 3.95) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(t)}$</span>};</span>
+<span id="cb2-113"><a href="parametriccurvesfoundations.html#cb2-113" tabindex="-1"></a><span class="fu">\node</span>[right] at (0, -0.75) {(b) Example of a closed plane curve.};</span>
+<span id="cb2-114"><a href="parametriccurvesfoundations.html#cb2-114" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-115"><a href="parametriccurvesfoundations.html#cb2-115" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-116"><a href="parametriccurvesfoundations.html#cb2-116" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span>
+<span id="cb2-117"><a href="parametriccurvesfoundations.html#cb2-117" tabindex="-1"></a></span>
+<span id="cb2-118"><a href="parametriccurvesfoundations.html#cb2-118" tabindex="-1"></a><span class="co">%%Image (c) generated using \LaTeX package *tikz*.%%</span></span>
+<span id="cb2-119"><a href="parametriccurvesfoundations.html#cb2-119" tabindex="-1"></a><span class="bu">\documentclass</span>[convert={density=600,outext=.png}]{<span class="ex">standalone</span>}</span>
+<span id="cb2-120"><a href="parametriccurvesfoundations.html#cb2-120" tabindex="-1"></a><span class="bu">\include</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-121"><a href="parametriccurvesfoundations.html#cb2-121" tabindex="-1"></a><span class="bu">\usepackage</span>[pdftex,active,tightpage]{<span class="ex">preview</span>}</span>
+<span id="cb2-122"><a href="parametriccurvesfoundations.html#cb2-122" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb2-123"><a href="parametriccurvesfoundations.html#cb2-123" tabindex="-1"></a><span class="bu">\usepackage</span>[dvipsnames]{<span class="ex">xcolor</span>}</span>
+<span id="cb2-124"><a href="parametriccurvesfoundations.html#cb2-124" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb2-125"><a href="parametriccurvesfoundations.html#cb2-125" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{matrix}</span>
+<span id="cb2-126"><a href="parametriccurvesfoundations.html#cb2-126" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{decorations.markings}</span>
+<span id="cb2-127"><a href="parametriccurvesfoundations.html#cb2-127" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb2-128"><a href="parametriccurvesfoundations.html#cb2-128" tabindex="-1"></a><span class="fu">\pgfplotsset</span>{every axis/.append style={</span>
+<span id="cb2-129"><a href="parametriccurvesfoundations.html#cb2-129" tabindex="-1"></a>  axis x line=middle,</span>
+<span id="cb2-130"><a href="parametriccurvesfoundations.html#cb2-130" tabindex="-1"></a>  <span class="co">% puts the x a  xis in the middle</span></span>
+<span id="cb2-131"><a href="parametriccurvesfoundations.html#cb2-131" tabindex="-1"></a>  axis y line=middle,</span>
+<span id="cb2-132"><a href="parametriccurvesfoundations.html#cb2-132" tabindex="-1"></a>  <span class="co">% puts the y axis in the middle</span></span>
+<span id="cb2-133"><a href="parametriccurvesfoundations.html#cb2-133" tabindex="-1"></a>  axis line style={thick,-&gt;,color=black},</span>
+<span id="cb2-134"><a href="parametriccurvesfoundations.html#cb2-134" tabindex="-1"></a>  <span class="co">% arrows on the axis</span></span>
+<span id="cb2-135"><a href="parametriccurvesfoundations.html#cb2-135" tabindex="-1"></a>  xlabel={<span class="ss">$x$</span>},</span>
+<span id="cb2-136"><a href="parametriccurvesfoundations.html#cb2-136" tabindex="-1"></a>  <span class="co">% default put x on x-axis</span></span>
+<span id="cb2-137"><a href="parametriccurvesfoundations.html#cb2-137" tabindex="-1"></a>  ylabel={<span class="ss">$y$</span>},</span>
+<span id="cb2-138"><a href="parametriccurvesfoundations.html#cb2-138" tabindex="-1"></a>  <span class="co">% default put y on y-axis</span></span>
+<span id="cb2-139"><a href="parametriccurvesfoundations.html#cb2-139" tabindex="-1"></a>  ticks=none,</span>
+<span id="cb2-140"><a href="parametriccurvesfoundations.html#cb2-140" tabindex="-1"></a>}}</span>
+<span id="cb2-141"><a href="parametriccurvesfoundations.html#cb2-141" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb2-142"><a href="parametriccurvesfoundations.html#cb2-142" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-143"><a href="parametriccurvesfoundations.html#cb2-143" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-144"><a href="parametriccurvesfoundations.html#cb2-144" tabindex="-1"></a><span class="co">%% TIKZ_CODE %%</span></span>
+<span id="cb2-145"><a href="parametriccurvesfoundations.html#cb2-145" tabindex="-1"></a><span class="fu">\tikzset</span>{-&gt;-/.style={decoration={</span>
+<span id="cb2-146"><a href="parametriccurvesfoundations.html#cb2-146" tabindex="-1"></a>  markings,</span>
+<span id="cb2-147"><a href="parametriccurvesfoundations.html#cb2-147" tabindex="-1"></a>    mark=at position 0.15 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-148"><a href="parametriccurvesfoundations.html#cb2-148" tabindex="-1"></a>    mark=at position 0.3 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-149"><a href="parametriccurvesfoundations.html#cb2-149" tabindex="-1"></a>    mark=at position 0.475 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-150"><a href="parametriccurvesfoundations.html#cb2-150" tabindex="-1"></a>    mark=at position 0.6 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-151"><a href="parametriccurvesfoundations.html#cb2-151" tabindex="-1"></a>    mark=at position 0.7 with {<span class="fu">\arrow</span>{&gt;}},</span>
+<span id="cb2-152"><a href="parametriccurvesfoundations.html#cb2-152" tabindex="-1"></a>    mark=at position 0.9 with {<span class="fu">\arrow</span>{&gt;}}},</span>
+<span id="cb2-153"><a href="parametriccurvesfoundations.html#cb2-153" tabindex="-1"></a>  postaction={decorate}</span>
+<span id="cb2-154"><a href="parametriccurvesfoundations.html#cb2-154" tabindex="-1"></a>  }</span>
+<span id="cb2-155"><a href="parametriccurvesfoundations.html#cb2-155" tabindex="-1"></a>}</span>
+<span id="cb2-156"><a href="parametriccurvesfoundations.html#cb2-156" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-157"><a href="parametriccurvesfoundations.html#cb2-157" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb2-158"><a href="parametriccurvesfoundations.html#cb2-158" tabindex="-1"></a>    xmin=-4,xmax=4,</span>
+<span id="cb2-159"><a href="parametriccurvesfoundations.html#cb2-159" tabindex="-1"></a>    ymin=-4,ymax=4,</span>
+<span id="cb2-160"><a href="parametriccurvesfoundations.html#cb2-160" tabindex="-1"></a><span class="co">%   grid=both,</span></span>
+<span id="cb2-161"><a href="parametriccurvesfoundations.html#cb2-161" tabindex="-1"></a>    <span class="co">% adds gridlines</span></span>
+<span id="cb2-162"><a href="parametriccurvesfoundations.html#cb2-162" tabindex="-1"></a>  ]</span>
+<span id="cb2-163"><a href="parametriccurvesfoundations.html#cb2-163" tabindex="-1"></a>  <span class="fu">\addplot</span> [-&gt;-, thick, domain=0:360, samples=500, color=Cerulean, variable=<span class="fu">\t</span>]</span>
+<span id="cb2-164"><a href="parametriccurvesfoundations.html#cb2-164" tabindex="-1"></a>    ({(2-sin(3*t)*cos(9*t))*cos(t)}, {(2-sin(3*t)*cos(9*t))*sin(t)});</span>
+<span id="cb2-165"><a href="parametriccurvesfoundations.html#cb2-165" tabindex="-1"></a>  <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(2.67441,1.05887)};</span>
+<span id="cb2-166"><a href="parametriccurvesfoundations.html#cb2-166" tabindex="-1"></a>  <span class="fu">\addplot</span>[mark=*, color=Cerulean] coordinates {(-2.26261,1.75506)};</span>
+<span id="cb2-167"><a href="parametriccurvesfoundations.html#cb2-167" tabindex="-1"></a>  <span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb2-168"><a href="parametriccurvesfoundations.html#cb2-168" tabindex="-1"></a><span class="fu">\node</span> at (5.725, 3.95) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(a)=P(b)}$</span>};</span>
+<span id="cb2-169"><a href="parametriccurvesfoundations.html#cb2-169" tabindex="-1"></a><span class="fu">\node</span> at (0.95, 4.125) {<span class="ss">${</span><span class="sc">\color</span><span class="ss">{Cerulean}P(t)}$</span>};</span>
+<span id="cb2-170"><a href="parametriccurvesfoundations.html#cb2-170" tabindex="-1"></a><span class="fu">\node</span>[right] at (0, -0.75) {(c) Example of a simple closed plane curve.};</span>
+<span id="cb2-171"><a href="parametriccurvesfoundations.html#cb2-171" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-172"><a href="parametriccurvesfoundations.html#cb2-172" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">preview</span>}</span>
+<span id="cb2-173"><a href="parametriccurvesfoundations.html#cb2-173" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+</div>
+</details>
+<div>
+Letting <span class="math inline">\(C\)</span> be a plane curve, as defined in Definition <a href="parametriccurvesfoundations.html#def:planecurve">1.12</a>. The equations,
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  x = f(t) \quad \text{and} \quad y = g(t),
+  \end{align*}\]</span>
+</div>
+<div>
+for <span class="nbr"><span class="math inline">\(t \in I\)</span>,</span> are <strong>parametric equations</strong> for <span class="math inline">\(C\)</span> with <strong>parameter</strong> <span class="nbr"><span class="math inline">\(t\)</span>.</span> When describing a curve <span class="math inline">\(C\)</span>in this way, we say that <span class="math inline">\(C\)</span> is a <strong>parametrised curve</strong>, and the parametric equations are a <strong>parametrisation</strong> for <span class="math inline">\(C\)</span>.
+</div>
+<div>
+<p>In all three of our examples given in Figure <a href="parametriccurvesfoundations.html#fig:fig-par-1">1.2</a>, we have highlighted, by use of arrows, the direction in which <span class="math inline">\(C\)</span> is traced‑out by <span class="math inline">\(P\)</span> as <span class="math inline">\(t\)</span> increases from <span class="math inline">\(a\)</span> to <span class="nbr"><span class="math inline">\(b\)</span>.</span> The <strong>orientation</strong> of a parametrised curve <span class="math inline">\(C\)</span> is the direction determined by increasing the value of the parameter. Note, the orientation is a property of the parametrisation and not the plane curve. Indeed, a plane curve may have several different parametrisations.</p>
+</div>
+<div>
+A plane curve <span class="math inline">\(C\)</span> is called <strong>smooth</strong>, if it has a parametrisation
+</div>
+<div class="aligncontainer">
+<span class="math display">\[\begin{align*}
+  x = f(t) \quad \text{and} \quad y = g(t),
+  \end{align*}\]</span>
+</div>
+<div>
+<p>for <span class="nbr"><span class="math inline">\(t \in I\)</span>,</span> with <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> smooth and not simultaneously zero, except possibly at the end points of the domain <span class="math inline">\(I\)</span> of the parameter <span class="nbr"><span class="math inline">\(t\)</span>.</span> More generally, if the domain <span class="math inline">\(I\)</span> can be partitioned into closed subintervals with <span class="math inline">\(C\)</span> smooth on each subinterval, then we say that <span class="math inline">\(C\)</span> is <strong>piecewise smooth</strong>. Note, a smooth plane curve has no corners or cusps, but a piecewise smooth plane curves may contain a finite number of corners or cusps.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="integrationfoundations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sequencesseriesfoundations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": false,
+"fig_caption": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
